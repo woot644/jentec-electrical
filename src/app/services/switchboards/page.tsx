@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ServicePageHero from "@/components/ServicePageHero";
 
 const features = [
   {
@@ -53,17 +54,12 @@ const warningSignItems = [
 export default function SwitchboardsPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative py-24 sm:py-32">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(57,255,20,0.06),transparent_50%)]" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">Services</p>
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6">Switchboards</h1>
-          <p className="text-xl text-text-secondary max-w-2xl">
-            Hundreds of switchboard upgrades completed throughout Brisbane. Your switchboard is the heart of your electrical system &mdash; if it&apos;s outdated, your home or business could be at risk. We bring switchboards up to current safety standards with expert upgrades and installations.
-          </p>
-        </div>
-      </section>
+      <ServicePageHero
+        overline="Services"
+        title="Switchboards"
+        description="Hundreds of switchboard upgrades completed throughout Brisbane. Your switchboard is the heart of your electrical system — if it's outdated, your home or business could be at risk. We bring switchboards up to current safety standards with expert upgrades and installations."
+        image="/images/20221005-img_9887.jpg"
+      />
 
       {/* Stats Banner */}
       <section className="py-16 bg-surface">

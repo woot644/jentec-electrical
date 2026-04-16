@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ServicePageHero from "@/components/ServicePageHero";
 
 const features = [
   {
@@ -51,17 +52,12 @@ const complianceServices = [
 export default function CommercialPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative py-24 sm:py-32">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(57,255,20,0.06),transparent_50%)]" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">Services</p>
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6">Commercial Electrical Services</h1>
-          <p className="text-xl text-text-secondary max-w-2xl">
-            Specialist commercial electricians providing dedicated service to Brisbane businesses. From emergency breakdowns to full-scale fit-outs, we deliver premium electrical solutions tailored to your commercial needs.
-          </p>
-        </div>
-      </section>
+      <ServicePageHero
+        overline="Services"
+        title="Commercial Electrical Services"
+        description="Specialist commercial electricians providing dedicated service to Brisbane businesses. From emergency breakdowns to full-scale fit-outs, we deliver premium electrical solutions tailored to your commercial needs."
+        image="/images/nofomo-bundall-4-.jpg"
+      />
 
       {/* Dedicated Tradesman */}
       <section className="py-16 bg-surface">

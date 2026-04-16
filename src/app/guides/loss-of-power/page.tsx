@@ -41,6 +41,7 @@ export default function LossOfPowerPage() {
         overline="Troubleshooting Guide"
         title="Loss of Power"
         description="Follow these steps to safely diagnose and resolve a power outage at your home or business. If at any point you feel unsafe, stop and call a licensed electrician."
+        image="/images/20221005-img_0284.jpg"
       />
 
       {/* Video */}

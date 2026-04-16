@@ -42,6 +42,7 @@ export default function SpecialsPage() {
         overline="Limited Time Offer"
         title="TCL Split System Air Conditioner Special"
         description="Premium TCL split system air conditioners, fully supplied and installed. Up to 30% off standard pricing while stocks last."
+        image="/images/2025-ac-installation-special.jpg"
       />
 
       {/* Pricing Cards */}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ServicePageHero from "@/components/ServicePageHero";
 
 const features = [
   {
@@ -49,17 +50,12 @@ const placements = [
 export default function SmokeAlarmsPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative py-24 sm:py-32">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(57,255,20,0.06),transparent_50%)]" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">Services</p>
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6">Smoke Alarms</h1>
-          <p className="text-xl text-text-secondary max-w-2xl">
-            Queensland law requires hardwired, interconnected smoke alarms in all domestic dwellings. With the 2027 compliance deadline approaching, now is the time to ensure your home meets the latest fire safety requirements.
-          </p>
-        </div>
-      </section>
+      <ServicePageHero
+        overline="Services"
+        title="Smoke Alarms"
+        description="Queensland law requires hardwired, interconnected smoke alarms in all domestic dwellings. With the 2027 compliance deadline approaching, now is the time to ensure your home meets the latest fire safety requirements."
+        image="/images/20221005-img_0085.jpg"
+      />
 
       {/* Deadline Banner */}
       <section className="py-16 bg-surface">

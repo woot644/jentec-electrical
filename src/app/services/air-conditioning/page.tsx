@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ServicePageHero from "@/components/ServicePageHero";
 
 const features = [
   {
@@ -49,17 +50,12 @@ const benefits = [
 export default function AirConditioningPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative py-24 sm:py-32">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(57,255,20,0.06),transparent_50%)]" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">Services</p>
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6">Air Conditioning</h1>
-          <p className="text-xl text-text-secondary max-w-2xl">
-            Split system installations and year-round servicing to keep your home or business comfortable in Brisbane&apos;s climate. Licensed, experienced, and trusted by hundreds of Brisbane households and businesses.
-          </p>
-        </div>
-      </section>
+      <ServicePageHero
+        overline="Services"
+        title="Air Conditioning"
+        description="Split system installations and year-round servicing to keep your home or business comfortable in Brisbane's climate. Licensed, experienced, and trusted by hundreds of Brisbane households and businesses."
+        image="/images/20221005-img_9858.jpg"
+      />
 
       {/* Features */}
       <section className="py-24 bg-surface">

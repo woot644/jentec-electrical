@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ServicePageHero from "@/components/ServicePageHero";
 
 const features = [
   {
@@ -54,17 +55,12 @@ const industrialServices = [
 export default function IndustrialPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative py-24 sm:py-32">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(57,255,20,0.06),transparent_50%)]" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">Services</p>
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6">Industrial Electrical</h1>
-          <p className="text-xl text-text-secondary max-w-2xl">
-            Specialist maintenance and installation for large industrial premises across Brisbane. From 3-phase machinery connections to comprehensive plant equipment servicing, our team keeps your operations powered and compliant.
-          </p>
-        </div>
-      </section>
+      <ServicePageHero
+        overline="Services"
+        title="Industrial Electrical"
+        description="Specialist maintenance and installation for large industrial premises across Brisbane. From 3-phase machinery connections to comprehensive plant equipment servicing, our team keeps your operations powered and compliant."
+        image="/images/20221111-img_1080-pano-5243x3382.jpg"
+      />
 
       {/* 24/7 Banner */}
       <section className="py-16 bg-surface">

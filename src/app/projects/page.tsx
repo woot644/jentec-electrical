@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { projects, type Project } from "@/data/projects";
+import ServicePageHero from "@/components/ServicePageHero";
 
 function ProjectCard({ project }: { project: Project }) {
   return (
@@ -54,29 +55,12 @@ export default function ProjectsPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative py-24 sm:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(57,255,20,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(57,255,20,0.03)_1px,transparent_1px)] bg-[size:64px_64px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="w-3 h-3 rounded-full bg-neon pulse-neon" />
-              <span className="text-xs font-bold text-neon uppercase tracking-[3px]">
-                Our Work
-              </span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">
-              Project <span className="neon-text">Gallery</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-text-secondary font-light leading-relaxed">
-              From commercial gym fit-outs and boutique studios to heritage
-              Queenslander rewires and luxury home renovations &mdash; explore the
-              work behind Jentech Electrical.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServicePageHero
+        overline="Our Work"
+        title="Project Gallery"
+        description="From commercial gym fit-outs and boutique studios to heritage Queenslander rewires and luxury home renovations — explore the work behind Jentech Electrical."
+        image="/images/grayhaus-verney-rd-5.jpg"
+      />
 
       {/* Tabs + Grid */}
       <section className="py-16 bg-surface">
