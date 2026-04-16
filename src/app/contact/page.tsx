@@ -23,7 +23,8 @@ export default function ContactPage() {
         overline="Get In Touch"
         title="Contact Us"
         description="Ready to start a project or need emergency help? Reach out and our team will get back to you as soon as possible."
-        image="/team-hero.jpg"
+        image="/images/portraits-df58935.jpg"
+        imagePosition="right center"
       />
 
       {/* Contact info + Form */}
