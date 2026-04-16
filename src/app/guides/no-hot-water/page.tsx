@@ -37,6 +37,26 @@ export default function NoHotWaterPage() {
         description="Lost hot water at home? Follow these steps to identify common causes before calling a technician. Most issues can be diagnosed quickly."
       />
 
+      {/* Video */}
+      <section className="py-12 bg-surface">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-surface-card border border-border rounded-lg overflow-hidden">
+            <div className="aspect-video">
+              <iframe
+                src="https://player.vimeo.com/video/1035353405?h=454cf00f7f"
+                title="No Hot Water — Troubleshooting Tips"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+          <p className="text-center text-sm text-text-muted mt-4">
+            Watch our team walk through the troubleshooting steps.
+          </p>
+        </div>
+      </section>
+
       {/* Safety Warning */}
       <section className="bg-surface py-6">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -92,6 +112,15 @@ export default function NoHotWaterPage() {
                     </p>
                   </div>
                 </div>
+                {step.number === 3 && (
+                  <div className="mt-6 rounded overflow-hidden border border-border bg-surface">
+                    <img
+                      src="/images/screenshot-2025-02-06-214353.png"
+                      alt="Electric hot water system diagram"
+                      className="w-full max-h-80 object-contain bg-white"
+                    />
+                  </div>
+                )}
               </div>
             ))}
           </div>

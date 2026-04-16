@@ -1,78 +1,6 @@
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
-
-const posts = [
-  {
-    title: "Cyclone Preparedness: Protecting Your Electrical Systems",
-    date: "2 March 2025",
-    category: "Safety",
-    excerpt:
-      "Queensland cyclone season demands preparation. Learn how to protect your home's electrical systems before, during, and after a cyclone event.",
-  },
-  {
-    title: "Lighting Design Trends for Modern Brisbane Homes",
-    date: "16 May 2023",
-    category: "News",
-    excerpt:
-      "From pendant clusters to LED strip lighting, discover the latest lighting design trends transforming Brisbane homes and commercial spaces.",
-  },
-  {
-    title: "Smart Homes: A Beginner's Guide to Home Automation",
-    date: "28 February 2023",
-    category: "News",
-    excerpt:
-      "Smart lighting, automated blinds, and voice-controlled systems are more accessible than ever. Here's how to get started.",
-  },
-  {
-    title: "Understanding Power Outages in Brisbane",
-    date: "23 February 2023",
-    category: "News",
-    excerpt:
-      "Why do power outages happen, how long do they last, and what can you do to prepare? We break down the most common causes across South East Queensland.",
-  },
-  {
-    title: "AC vs DC Power: What's the Difference?",
-    date: "14 February 2023",
-    category: "News",
-    excerpt:
-      "Alternating current and direct current power your world in different ways. Learn how each works and why your home uses both.",
-  },
-  {
-    title: "How Is Electricity Generated in Australia?",
-    date: "2 February 2023",
-    category: "News",
-    excerpt:
-      "From coal-fired power stations to rooftop solar, Australia's electricity generation is evolving. Here's the current landscape.",
-  },
-  {
-    title: "Electronic Waste Recycling: A Responsible Guide",
-    date: "29 January 2023",
-    category: "News",
-    excerpt:
-      "Old appliances, cables, and electronics contain valuable and hazardous materials. Learn how to recycle e-waste responsibly in Queensland.",
-  },
-  {
-    title: "Preventing House Fires: Electrical Safety at Home",
-    date: "18 January 2023",
-    category: "Safety",
-    excerpt:
-      "Faulty wiring is one of the leading causes of house fires in Australia. Learn the warning signs and how to reduce your risk.",
-  },
-  {
-    title: "Emergency Lighting Requirements for Commercial Properties",
-    date: "9 January 2023",
-    category: "Safety",
-    excerpt:
-      "Australian standards require emergency and exit lighting in commercial buildings. Here's what property owners and managers need to know.",
-  },
-  {
-    title: "Electrical Safety for Kids: Teaching the Basics",
-    date: "5 January 2023",
-    category: "Safety",
-    excerpt:
-      "From power point covers to water safety, equip your children with the knowledge to stay safe around electricity at home.",
-  },
-];
+import { blogPosts as posts } from "@/data/blog";
 
 function CategoryBadge({ category }: { category: string }) {
   const isSafety = category === "Safety";
@@ -104,7 +32,7 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post) => (
               <article
-                key={post.title}
+                key={post.slug}
                 className="card-hover bg-surface-card rounded-lg overflow-hidden group flex flex-col"
               >
                 {/* Placeholder image */}

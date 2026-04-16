@@ -1,4 +1,16 @@
 import Link from "next/link";
+import { projects } from "@/data/projects";
+
+const featuredProjects = [
+  "nofomo-helensvale",
+  "stoke-green",
+  "fridas-paddington",
+  "clementine",
+  "nofomo-bundall",
+  "verney-house",
+]
+  .map((s) => projects.find((p) => p.slug === s)!)
+  .filter(Boolean);
 
 const services = [
   {
@@ -61,15 +73,6 @@ const services = [
       </svg>
     ),
   },
-];
-
-const projects = [
-  { name: "NOFOMO Helensvale", type: "Commercial Fit-Out", tag: "COMMERCIAL" },
-  { name: "Stoke Green", type: "1930s Queenslander Renovation", tag: "RESIDENTIAL" },
-  { name: "Frida's Paddington", type: "Boutique Studio Fit-Out", tag: "COMMERCIAL" },
-  { name: "Clementine", type: "1940s Art Deco Restoration", tag: "RESIDENTIAL" },
-  { name: "NOFOMO Bundall", type: "24/7 HIIT Studio", tag: "COMMERCIAL" },
-  { name: "Verney House", type: "Classic QLD Home Renovation", tag: "RESIDENTIAL" },
 ];
 
 const reviews = [
@@ -221,17 +224,29 @@ export default function Home() {
             <Link href="/projects" className="neon-btn-outline px-6 py-3 rounded text-sm tracking-wider">VIEW ALL PROJECTS</Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((p) => (
-              <div key={p.name} className="card-hover bg-surface-card rounded-lg overflow-hidden group">
-                <div className="h-48 bg-surface-elevated flex items-center justify-center border-b border-border">
-                  <svg className="w-12 h-12 text-border group-hover:text-neon/30 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}><path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909M3.75 21h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v13.5A1.5 1.5 0 0 0 3.75 21Z" /></svg>
+            {featuredProjects.map((p) => (
+              <Link
+                key={p.slug}
+                href={`/projects/${p.slug}`}
+                className="card-hover bg-surface-card rounded-lg overflow-hidden group"
+              >
+                <div className="h-48 bg-surface-elevated border-b border-border overflow-hidden">
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <div className="p-6">
-                  <span className="text-[10px] font-bold text-neon uppercase tracking-[2px] bg-neon-glow px-2.5 py-1 rounded">{p.tag}</span>
-                  <h3 className="text-lg font-bold mt-3 mb-1">{p.name}</h3>
-                  <p className="text-sm text-text-secondary">{p.type}</p>
+                  <span className="text-[10px] font-bold text-neon uppercase tracking-[2px] bg-neon-glow px-2.5 py-1 rounded">
+                    {p.category}
+                  </span>
+                  <h3 className="text-lg font-bold mt-3 mb-1 group-hover:text-neon transition-colors">
+                    {p.name}
+                  </h3>
+                  <p className="text-sm text-text-secondary">{p.tagline}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

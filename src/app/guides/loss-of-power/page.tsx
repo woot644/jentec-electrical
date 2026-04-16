@@ -43,6 +43,26 @@ export default function LossOfPowerPage() {
         description="Follow these steps to safely diagnose and resolve a power outage at your home or business. If at any point you feel unsafe, stop and call a licensed electrician."
       />
 
+      {/* Video */}
+      <section className="py-12 bg-surface">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-surface-card border border-border rounded-lg overflow-hidden">
+            <div className="aspect-video">
+              <iframe
+                src="https://player.vimeo.com/video/1034653272?h=14834260ce"
+                title="Loss of Power — Troubleshooting Tips"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+          <p className="text-center text-sm text-text-muted mt-4">
+            Watch how to troubleshoot a power outage step by step.
+          </p>
+        </div>
+      </section>
+
       {/* Safety Warning */}
       <section className="bg-surface py-6">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

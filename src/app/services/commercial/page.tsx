@@ -82,7 +82,7 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      {/* Features */}
+      {/* Feature Images */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -90,11 +90,21 @@ export default function CommercialPage() {
             <h2 className="text-3xl sm:text-4xl font-bold">Full Commercial Electrical Solutions</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {features.map((f) => (
-              <div key={f.title} className="card-hover bg-surface-card rounded-lg p-8">
-                <div className="text-neon mb-4">{f.icon}</div>
-                <h3 className="text-xl font-bold mb-3">{f.title}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed">{f.desc}</p>
+            {[
+              { ...features[0], img: "/images/blob-5acc874.png" },
+              { ...features[1], img: "/images/nofomo-bundall-4-.jpg" },
+              { ...features[2], img: "/images/20221111-img_1133-pano-5983x3433.jpg" },
+              { ...features[3], img: "/images/20221111-img_0652-copy.jpg" },
+            ].map((f) => (
+              <div key={f.title} className="card-hover bg-surface-card rounded-lg overflow-hidden">
+                <div className="h-56 overflow-hidden border-b border-border">
+                  <img src={f.img} alt={f.title} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-8">
+                  <div className="text-neon mb-4">{f.icon}</div>
+                  <h3 className="text-xl font-bold mb-3">{f.title}</h3>
+                  <p className="text-text-secondary text-sm leading-relaxed">{f.desc}</p>
+                </div>
               </div>
             ))}
           </div>

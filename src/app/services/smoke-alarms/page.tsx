@@ -97,13 +97,26 @@ export default function SmokeAlarmsPage() {
             <h2 className="text-3xl sm:text-4xl font-bold">Smoke Alarm Solutions</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {features.map((f) => (
-              <div key={f.title} className="card-hover bg-surface-card rounded-lg p-8">
-                <div className="text-neon mb-4">{f.icon}</div>
-                <h3 className="text-xl font-bold mb-3">{f.title}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed">{f.desc}</p>
-              </div>
-            ))}
+            {features.map((f, i) => {
+              const imgs = [
+                "/images/20221005-img_0085.jpg",
+                "/images/20221005-img_9887.jpg",
+                "/images/20221005-img_0284.jpg",
+                "/images/elv_4716.jpg",
+              ];
+              return (
+                <div key={f.title} className="card-hover bg-surface-card rounded-lg overflow-hidden">
+                  <div className="h-56 overflow-hidden border-b border-border">
+                    <img src={imgs[i % imgs.length]} alt={f.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-8">
+                    <div className="text-neon mb-4">{f.icon}</div>
+                    <h3 className="text-xl font-bold mb-3">{f.title}</h3>
+                    <p className="text-text-secondary text-sm leading-relaxed">{f.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
