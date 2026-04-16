@@ -142,7 +142,7 @@ export default function NoHotWaterPage() {
                 {step.number === 3 && (
                   <div className="mt-6 rounded overflow-hidden border border-border bg-surface">
                     <img
-                      src="/images/screenshot-2025-02-06-214353.png"
+                      src="/images/screenshot-2025-02-06-214353.webp"
                       alt="Electric hot water system diagram"
                       className="w-full max-h-80 object-contain bg-white"
                     />

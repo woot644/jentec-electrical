@@ -58,7 +58,7 @@ export default function EmergencyPage() {
         overline="24/7 Emergency Service"
         title="Emergency Electrician Brisbane"
         description="Power failures, burning smells, tripping breakers and storm damage don't wait for business hours. Our on-call electricians respond across Greater Brisbane day and night."
-        image="/images/20221005-img_0284.jpg"
+        image="/images/20221005-img_0284.webp"
       />
 
       {/* Call to action band */}

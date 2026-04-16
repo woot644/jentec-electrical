@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
+import FAQSection from "@/components/FAQ";
 import { JsonLd, serviceSchema, breadcrumbSchema } from "@/lib/schema";
 import { SITE } from "@/lib/site";
+import { airConditioningFAQs } from "@/data/faqs";
 
 export const metadata: Metadata = {
   title: "Air Conditioning Installation & Servicing Brisbane",
@@ -78,7 +80,7 @@ export default function AirConditioningPage() {
         overline="Services"
         title="Air Conditioning"
         description="Split system installations and year-round servicing to keep your home or business comfortable in Brisbane's climate. Licensed, experienced, and trusted by hundreds of Brisbane households and businesses."
-        image="/images/20221005-img_9858.jpg"
+        image="/images/20221005-img_9858.webp"
       />
 
       {/* Features */}
@@ -90,10 +92,10 @@ export default function AirConditioningPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { ...features[0], img: "/images/20221005-img_9858.jpg" },
-              { ...features[1], img: "/images/20221005-img_0104.jpg" },
-              { ...features[2], img: "/images/20221005-img_9887.jpg" },
-              { ...features[3], img: "/images/2025-ac-installation-special.jpg" },
+              { ...features[0], img: "/images/20221005-img_9858.webp" },
+              { ...features[1], img: "/images/20221005-img_0104.webp" },
+              { ...features[2], img: "/images/20221005-img_9887.webp" },
+              { ...features[3], img: "/images/2025-ac-installation-special.webp" },
             ].map((f) => (
               <div key={f.title} className="card-hover bg-surface-card rounded-lg overflow-hidden">
                 <div className="h-56 overflow-hidden border-b border-border">
@@ -177,6 +179,8 @@ export default function AirConditioningPage() {
           </div>
         </div>
       </section>
+
+      <FAQSection items={airConditioningFAQs} />
 
       {/* CTA */}
       <section className="py-24 bg-surface">

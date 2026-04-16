@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
+import FAQSection from "@/components/FAQ";
 import { JsonLd, serviceSchema, breadcrumbSchema } from "@/lib/schema";
 import { SITE } from "@/lib/site";
+import { industrialFAQs } from "@/data/faqs";
 
 export const metadata: Metadata = {
   title: "Industrial Electrician Brisbane — 3-Phase, Plant & Machinery",
@@ -117,10 +119,10 @@ export default function IndustrialPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { ...features[0], img: "/images/20221111-img_1080-pano-5243x3382.jpg" },
-              { ...features[1], img: "/images/20221111-img_0652-3549x5116.jpg" },
-              { ...features[2], img: "/images/20221111-img_1133-pano-5983x3433.jpg" },
-              { ...features[3], img: "/images/20221111-img_0652-copy.jpg" },
+              { ...features[0], img: "/images/20221111-img_1080-pano-5243x3382.webp" },
+              { ...features[1], img: "/images/20221111-img_0652-3549x5116.webp" },
+              { ...features[2], img: "/images/20221111-img_1133-pano-5983x3433.webp" },
+              { ...features[3], img: "/images/20221111-img_0652-copy.webp" },
             ].map((f) => (
               <div key={f.title} className="card-hover bg-surface-card rounded-lg overflow-hidden">
                 <div className="h-56 overflow-hidden border-b border-border">
@@ -175,6 +177,8 @@ export default function IndustrialPage() {
           </div>
         </div>
       </section>
+
+      <FAQSection items={industrialFAQs} />
 
       {/* CTA */}
       <section className="py-24 bg-surface">

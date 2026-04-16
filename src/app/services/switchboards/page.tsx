@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
+import FAQSection from "@/components/FAQ";
 import { JsonLd, serviceSchema, breadcrumbSchema } from "@/lib/schema";
 import { SITE } from "@/lib/site";
+import { switchboardsFAQs } from "@/data/faqs";
 
 export const metadata: Metadata = {
   title: "Switchboard Upgrades & Safety Inspections Brisbane",
@@ -82,7 +84,7 @@ export default function SwitchboardsPage() {
         overline="Services"
         title="Switchboards"
         description="Hundreds of switchboard upgrades completed throughout Brisbane. Your switchboard is the heart of your electrical system — if it's outdated, your home or business could be at risk. We bring switchboards up to current safety standards with expert upgrades and installations."
-        image="/images/20221005-img_9887.jpg"
+        image="/images/20221005-img_9887.webp"
       />
 
       {/* Stats Banner */}
@@ -114,10 +116,10 @@ export default function SwitchboardsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map((f, i) => {
               const imgs = [
-                "/images/20221005-img_9887.jpg",
-                "/images/20221005-img_0284.jpg",
-                "/images/20221111-img_0652-3549x5116.jpg",
-                "/images/elv_4716.jpg",
+                "/images/20221005-img_9887.webp",
+                "/images/20221005-img_0284.webp",
+                "/images/20221111-img_0652-3549x5116.webp",
+                "/images/elv_4716.webp",
               ];
               return (
                 <div key={f.title} className="card-hover bg-surface-card rounded-lg overflow-hidden">
@@ -182,6 +184,8 @@ export default function SwitchboardsPage() {
           </div>
         </div>
       </section>
+
+      <FAQSection items={switchboardsFAQs} />
 
       {/* CTA */}
       <section className="py-24 bg-surface">

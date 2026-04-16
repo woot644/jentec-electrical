@@ -11,7 +11,9 @@ const services = [
 
 const company = [
   { name: "Emergency Electrician", href: "/emergency-electrician-brisbane" },
+  { name: "Toowoomba", href: "/toowoomba-electrician" },
   { name: "Projects", href: "/projects" },
+  { name: "Our Team", href: "/team" },
   { name: "Blog", href: "/blog" },
   { name: "Specials", href: "/specials" },
   { name: "Contact", href: "/contact" },
@@ -135,7 +137,8 @@ export default function Footer() {
       <div className="border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-text-muted">
-            &copy; {new Date().getFullYear()} Jentech Electrical. All rights reserved. QLD Electrical Licence No. 80766
+            &copy; {new Date().getFullYear()} Jentech Electrical. All rights reserved. QLD Licence No. 80766 &middot;{" "}
+            <Link href="/privacy" className="hover:text-neon transition-colors">Privacy</Link>
           </p>
           <p className="text-xs text-text-muted">
             Website by <a href="https://arclightdigital.com.au" target="_blank" rel="noopener noreferrer" className="text-neon hover:underline">Arclight Digital</a>

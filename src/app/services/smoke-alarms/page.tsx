@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
+import FAQSection from "@/components/FAQ";
 import { JsonLd, serviceSchema, breadcrumbSchema } from "@/lib/schema";
 import { SITE } from "@/lib/site";
+import { smokeAlarmsFAQs } from "@/data/faqs";
 
 export const metadata: Metadata = {
   title: "Smoke Alarm Installation & Compliance Brisbane",
@@ -78,7 +80,7 @@ export default function SmokeAlarmsPage() {
         overline="Services"
         title="Smoke Alarms"
         description="Queensland law requires hardwired, interconnected smoke alarms in all domestic dwellings. With the 2027 compliance deadline approaching, now is the time to ensure your home meets the latest fire safety requirements."
-        image="/images/20221005-img_0085.jpg"
+        image="/images/20221005-img_0085.webp"
       />
 
       {/* Deadline Banner */}
@@ -119,10 +121,10 @@ export default function SmokeAlarmsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map((f, i) => {
               const imgs = [
-                "/images/20221005-img_0085.jpg",
-                "/images/20221005-img_9887.jpg",
-                "/images/20221005-img_0284.jpg",
-                "/images/elv_4716.jpg",
+                "/images/20221005-img_0085.webp",
+                "/images/20221005-img_9887.webp",
+                "/images/20221005-img_0284.webp",
+                "/images/elv_4716.webp",
               ];
               return (
                 <div key={f.title} className="card-hover bg-surface-card rounded-lg overflow-hidden">
@@ -184,6 +186,8 @@ export default function SmokeAlarmsPage() {
           </div>
         </div>
       </section>
+
+      <FAQSection items={smokeAlarmsFAQs} />
 
       {/* CTA */}
       <section className="py-24 bg-surface">

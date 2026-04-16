@@ -59,7 +59,7 @@ export default function ProjectsPage() {
         overline="Our Work"
         title="Project Gallery"
         description="From commercial gym fit-outs and boutique studios to heritage Queenslander rewires and luxury home renovations — explore the work behind Jentech Electrical."
-        image="/images/grayhaus-verney-rd-5.jpg"
+        image="/images/grayhaus-verney-rd-5.webp"
       />
 
       {/* Tabs + Grid */}

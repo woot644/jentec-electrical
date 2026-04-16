@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
+import FAQSection from "@/components/FAQ";
 import { JsonLd, serviceSchema, breadcrumbSchema } from "@/lib/schema";
 import { SITE } from "@/lib/site";
+import { residentialFAQs } from "@/data/faqs";
 
 export const metadata: Metadata = {
   title: "Residential Electrician & Renovation Specialists Brisbane",
@@ -76,7 +78,7 @@ export default function ResidentialPage() {
         overline="Services"
         title="Renovations & Residential"
         description="Expert electrical design, lighting, renovations, and new builds for Brisbane's finest homes. We specialise in premium residences, period properties, and architecturally designed houses that demand exceptional craftsmanship."
-        image="/images/elv_4716.jpg"
+        image="/images/elv_4716.webp"
       />
 
       {/* Architect Partners */}
@@ -114,10 +116,10 @@ export default function ResidentialPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { ...features[0], img: "/images/elv_4537.jpg" },
-              { ...features[1], img: "/images/elv_4390.jpg" },
-              { ...features[2], img: "/images/20221005-img_9887.jpg" },
-              { ...features[3], img: "/images/elv_4676.jpg" },
+              { ...features[0], img: "/images/elv_4537.webp" },
+              { ...features[1], img: "/images/elv_4390.webp" },
+              { ...features[2], img: "/images/20221005-img_9887.webp" },
+              { ...features[3], img: "/images/elv_4676.webp" },
             ].map((f) => (
               <div key={f.title} className="card-hover bg-surface-card rounded-lg overflow-hidden">
                 <div className="h-56 overflow-hidden border-b border-border">
@@ -178,6 +180,8 @@ export default function ResidentialPage() {
           </div>
         </div>
       </section>
+
+      <FAQSection items={residentialFAQs} />
 
       {/* CTA */}
       <section className="py-24 bg-surface">
