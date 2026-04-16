@@ -78,6 +78,12 @@ export default function Navigation() {
               </div>
             </div>
 
+            <Link
+              href="/emergency-electrician-brisbane"
+              className="px-3 py-2 text-sm font-medium text-neon hover:opacity-80 transition-opacity"
+            >
+              Emergency
+            </Link>
             <Link href="/specials" className="px-3 py-2 text-sm font-medium text-white hover:text-neon transition-colors">
               Specials
             </Link>
@@ -143,6 +149,7 @@ export default function Navigation() {
               </div>
             )}
 
+            <Link href="/emergency-electrician-brisbane" onClick={() => setMobileOpen(false)} className="block py-2.5 text-sm font-medium text-neon">Emergency</Link>
             <Link href="/specials" onClick={() => setMobileOpen(false)} className="block py-2.5 text-sm font-medium text-white">Specials</Link>
             <Link href="/blog" onClick={() => setMobileOpen(false)} className="block py-2.5 text-sm font-medium text-white">Blog</Link>
             <Link href="/contact" onClick={() => setMobileOpen(false)} className="block py-2.5 text-sm font-medium text-white">Contact</Link>

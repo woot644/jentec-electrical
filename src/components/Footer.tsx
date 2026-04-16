@@ -10,6 +10,7 @@ const services = [
 ];
 
 const company = [
+  { name: "Emergency Electrician", href: "/emergency-electrician-brisbane" },
   { name: "Projects", href: "/projects" },
   { name: "Blog", href: "/blog" },
   { name: "Specials", href: "/specials" },

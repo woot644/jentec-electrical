@@ -1,0 +1,35 @@
+# Jentech Electrical
+
+> Brisbane's premium electrician. Family-owned, licensed, 24/7 emergency service. Commercial, residential, industrial, air conditioning, smoke alarms, switchboard upgrades.
+
+QLD Electrical Licence: 80766
+Phone: 07 3914 9696
+Email: info@jentechelectrical.com.au
+Service area: Greater Brisbane, Gold Coast hinterland, Toowoomba region
+Rating: 5.0 stars (158 Google reviews)
+
+## Services
+
+- [Commercial Electrical](https://jentec-electrical.vercel.app/services/commercial): Fit-outs, emergency breakdowns, repairs & maintenance, testing & compliance for Brisbane businesses.
+- [Residential & Renovations](https://jentec-electrical.vercel.app/services/residential): LED lighting, full rewiring, switchboard upgrades, new builds and extensions for premium homes.
+- [Industrial](https://jentec-electrical.vercel.app/services/industrial): 3-phase machinery connections, emergency stops, shop and factory lighting, load balancing.
+- [Air Conditioning](https://jentec-electrical.vercel.app/services/air-conditioning): Split system installations, year-round servicing, repairs and multi-split design.
+- [Smoke Alarms](https://jentec-electrical.vercel.app/services/smoke-alarms): Installation and compliance testing to AS3786 and QLD 2027 interconnected-alarm requirements.
+- [Switchboards](https://jentec-electrical.vercel.app/services/switchboards): Upgrades to modern RCD-protected switchboards and safety inspections.
+
+## Emergency
+
+- [Emergency Electrician Brisbane](https://jentec-electrical.vercel.app/emergency-electrician-brisbane): 24/7 response for power outages, burning smells, tripping breakers, and after-hours faults.
+
+## Guides
+
+- [Loss of Power — Troubleshooting Guide](https://jentec-electrical.vercel.app/guides/loss-of-power): Step-by-step steps to safely diagnose a power outage.
+- [No Hot Water — Troubleshooting Guide](https://jentec-electrical.vercel.app/guides/no-hot-water): What to check before calling a technician or plumber.
+
+## Projects
+
+- [Project Gallery](https://jentec-electrical.vercel.app/projects): 11 completed and in-progress projects — Queenslander renovations, commercial fit-outs, and luxury homes.
+
+## Contact
+
+- [Contact Jentech Electrical](https://jentec-electrical.vercel.app/contact): Phone, email, service-area list, and Google Maps.

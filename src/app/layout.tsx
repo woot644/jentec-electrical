@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { JsonLd, localBusinessSchema, websiteSchema } from "@/lib/schema";
+import { SITE } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,8 +17,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jentech Electrical | Brisbane Electrician - Commercial, Residential, Industrial",
-  description: "Premium Brisbane electrician offering 24/7 emergency service. Commercial fit-outs, residential renovations, industrial maintenance, air conditioning, smoke alarms, and switchboard upgrades. Licence 80766.",
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: "Jentech Electrical — Brisbane Electrician | Commercial, Residential, Industrial",
+    template: "%s | Jentech Electrical",
+  },
+  description:
+    "Brisbane's premium electrician. 24/7 emergency service, commercial fit-outs, residential renovations, industrial maintenance, air conditioning, smoke alarms, switchboards. QLD Licence 80766.",
+  keywords: [
+    "Brisbane electrician",
+    "24/7 emergency electrician Brisbane",
+    "commercial electrician Brisbane",
+    "residential electrician Brisbane",
+    "switchboard upgrade Brisbane",
+    "smoke alarm installation Brisbane",
+    "air conditioning installation Brisbane",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_AU",
+    siteName: SITE.name,
+    url: SITE.url,
+    images: [{ url: "/logo/jentech-logo.png", width: 2560, height: 856, alt: SITE.name }],
+  },
+  twitter: { card: "summary_large_image" },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -30,6 +55,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black text-white">
+        <JsonLd data={localBusinessSchema()} />
+        <JsonLd data={websiteSchema()} />
         <Navigation />
         <main className="flex-1 pt-20">{children}</main>
         <Footer />

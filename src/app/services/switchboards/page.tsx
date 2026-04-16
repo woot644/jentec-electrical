@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
+import { JsonLd, serviceSchema, breadcrumbSchema } from "@/lib/schema";
+import { SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Switchboard Upgrades & Safety Inspections Brisbane",
+  description:
+    "Hundreds of Brisbane switchboard upgrades. Modern RCD-protected boards, circuit breakers, surge protection. Licensed safety inspections. Licence 80766.",
+  alternates: { canonical: `${SITE.url}/services/switchboards` },
+};
 
 const features = [
   {
@@ -54,6 +64,20 @@ const warningSignItems = [
 export default function SwitchboardsPage() {
   return (
     <>
+      <JsonLd
+        data={serviceSchema(
+          "Switchboard Upgrades & Inspections",
+          "Switchboard upgrades and safety inspections for Brisbane homes and businesses. RCD-protected boards meeting current Australian standards.",
+          `${SITE.url}/services/switchboards`
+        )}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: SITE.url },
+          { name: "Services", url: `${SITE.url}/services/switchboards` },
+          { name: "Switchboards", url: `${SITE.url}/services/switchboards` },
+        ])}
+      />
       <ServicePageHero
         overline="Services"
         title="Switchboards"

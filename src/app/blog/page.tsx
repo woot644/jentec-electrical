@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
 import { blogPosts as posts } from "@/data/blog";
+import { SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Blog — Electrical News & Safety Tips from Brisbane Electricians",
+  description:
+    "Safety tips, troubleshooting advice, and industry news from Jentech Electrical. Cyclone preparedness, lighting trends, smart homes, and QLD electrical safety.",
+  alternates: { canonical: `${SITE.url}/blog` },
+};
 
 function CategoryBadge({ category }: { category: string }) {
   const isSafety = category === "Safety";

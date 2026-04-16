@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
+import { JsonLd, serviceSchema, breadcrumbSchema } from "@/lib/schema";
+import { SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Industrial Electrician Brisbane — 3-Phase, Plant & Machinery",
+  description:
+    "Industrial electrical maintenance and installation across Brisbane. 3-phase machinery connections, emergency stops, factory lighting, plant equipment. 24/7 breakdowns.",
+  alternates: { canonical: `${SITE.url}/services/industrial` },
+};
 
 const features = [
   {
@@ -55,6 +65,20 @@ const industrialServices = [
 export default function IndustrialPage() {
   return (
     <>
+      <JsonLd
+        data={serviceSchema(
+          "Industrial Electrical",
+          "Maintenance and installation for Brisbane industrial premises: 3-phase machinery, emergency stops, shop and factory lighting, plant equipment.",
+          `${SITE.url}/services/industrial`
+        )}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: SITE.url },
+          { name: "Services", url: `${SITE.url}/services/industrial` },
+          { name: "Industrial", url: `${SITE.url}/services/industrial` },
+        ])}
+      />
       <ServicePageHero
         overline="Services"
         title="Industrial Electrical"

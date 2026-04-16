@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
+import { JsonLd, serviceSchema, breadcrumbSchema } from "@/lib/schema";
+import { SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Commercial Electrician Brisbane",
+  description:
+    "Specialist commercial electricians for Brisbane businesses. Fit-outs, emergency breakdowns, testing & compliance, maintenance. QLD Licence 80766. 24/7 service.",
+  alternates: { canonical: `${SITE.url}/services/commercial` },
+};
 
 const features = [
   {
@@ -52,6 +62,20 @@ const complianceServices = [
 export default function CommercialPage() {
   return (
     <>
+      <JsonLd
+        data={serviceSchema(
+          "Commercial Electrical Services",
+          "Fit-outs, emergency breakdowns, repairs, maintenance, and compliance testing for Brisbane businesses.",
+          `${SITE.url}/services/commercial`
+        )}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: SITE.url },
+          { name: "Services", url: `${SITE.url}/services/commercial` },
+          { name: "Commercial", url: `${SITE.url}/services/commercial` },
+        ])}
+      />
       <ServicePageHero
         overline="Services"
         title="Commercial Electrical Services"

@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
+import { JsonLd, serviceSchema, breadcrumbSchema } from "@/lib/schema";
+import { SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Air Conditioning Installation & Servicing Brisbane",
+  description:
+    "Split-system and multi-split air conditioning installations, servicing and repairs across Greater Brisbane. Licensed electricians, fair pricing, 5-year warranties.",
+  alternates: { canonical: `${SITE.url}/services/air-conditioning` },
+};
 
 const features = [
   {
@@ -50,6 +60,20 @@ const benefits = [
 export default function AirConditioningPage() {
   return (
     <>
+      <JsonLd
+        data={serviceSchema(
+          "Air Conditioning Installation",
+          "Split-system and multi-split installations, servicing, repairs and maintenance for Brisbane homes and businesses.",
+          `${SITE.url}/services/air-conditioning`
+        )}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: SITE.url },
+          { name: "Services", url: `${SITE.url}/services/air-conditioning` },
+          { name: "Air Conditioning", url: `${SITE.url}/services/air-conditioning` },
+        ])}
+      />
       <ServicePageHero
         overline="Services"
         title="Air Conditioning"

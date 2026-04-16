@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
+import { JsonLd, howToSchema, breadcrumbSchema } from "@/lib/schema";
+import { SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Loss of Power — Troubleshooting Guide",
+  description:
+    "Power out at home? Step-by-step guide to safely diagnose a power outage in Brisbane before calling an electrician. Includes ENERGEX reporting.",
+  alternates: { canonical: `${SITE.url}/guides/loss-of-power` },
+};
 
 const steps = [
   {
@@ -37,6 +47,22 @@ const steps = [
 export default function LossOfPowerPage() {
   return (
     <>
+      <JsonLd
+        data={howToSchema({
+          name: "How to Troubleshoot a Loss of Power",
+          description:
+            "Step-by-step guide to safely diagnose a power outage at a Brisbane home or business.",
+          url: `${SITE.url}/guides/loss-of-power`,
+          steps: steps.map((s) => ({ name: s.title, text: s.content })),
+        })}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: SITE.url },
+          { name: "Guides", url: `${SITE.url}/guides/loss-of-power` },
+          { name: "Loss of Power", url: `${SITE.url}/guides/loss-of-power` },
+        ])}
+      />
       <ServicePageHero
         overline="Troubleshooting Guide"
         title="Loss of Power"

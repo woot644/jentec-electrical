@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
+import { SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "TCL Split System Air Conditioner Special — Up to 30% Off",
+  description:
+    "Post-summer special: supply and install TCL reverse-cycle split system ACs from $1,760 ex GST. 5-year warranty. Brisbane properties within 20km of CBD.",
+  alternates: { canonical: `${SITE.url}/specials` },
+};
 
 const pricing = [
   { size: "2.6KW", price: "$1,760" },

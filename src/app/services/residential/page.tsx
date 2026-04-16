@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
+import { JsonLd, serviceSchema, breadcrumbSchema } from "@/lib/schema";
+import { SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Residential Electrician & Renovation Specialists Brisbane",
+  description:
+    "Brisbane's premium residential electrician. LED lighting, full rewiring, switchboard upgrades, new builds and Queenslander renovations. Licence 80766.",
+  alternates: { canonical: `${SITE.url}/services/residential` },
+};
 
 const features = [
   {
@@ -48,6 +58,20 @@ const architectPartners = [
 export default function ResidentialPage() {
   return (
     <>
+      <JsonLd
+        data={serviceSchema(
+          "Residential Electrical & Renovations",
+          "LED lighting design, full rewiring, switchboard upgrades, new builds and Queenslander renovations for premium Brisbane homes.",
+          `${SITE.url}/services/residential`
+        )}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: SITE.url },
+          { name: "Services", url: `${SITE.url}/services/residential` },
+          { name: "Residential", url: `${SITE.url}/services/residential` },
+        ])}
+      />
       <ServicePageHero
         overline="Services"
         title="Renovations & Residential"

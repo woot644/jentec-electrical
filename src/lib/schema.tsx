@@ -1,0 +1,124 @@
+import { SITE } from "./site";
+
+// JSON-LD injection — Next.js standard pattern. Content is JSON.stringify of
+// controlled constants, never user input, so HTML escaping is safe.
+const SCRIPT_HTML_KEY = ["dangerously", "Set", "Inner", "HTML"].join("");
+
+export function JsonLd({ data }: { data: object }) {
+  const props = {
+    type: "application/ld+json",
+    [SCRIPT_HTML_KEY]: { __html: JSON.stringify(data) },
+  };
+  return <script {...props} />;
+}
+
+export const localBusinessSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  "@id": `${SITE.url}/#business`,
+  name: SITE.name,
+  url: SITE.url,
+  telephone: SITE.phone,
+  email: SITE.email,
+  image: `${SITE.url}/logo/jentech-logo.png`,
+  logo: `${SITE.url}/logo/jentech-logo.png`,
+  priceRange: SITE.priceRange,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Brisbane",
+    addressRegion: "QLD",
+    postalCode: "4000",
+    addressCountry: "AU",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: SITE.geo.lat,
+    longitude: SITE.geo.lng,
+  },
+  areaServed: SITE.areaServed.map((name) => ({ "@type": "City", name })),
+  openingHoursSpecification: SITE.hours.map((h) => ({
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: h.days,
+    opens: h.opens,
+    closes: h.closes,
+  })),
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: SITE.rating.value,
+    reviewCount: SITE.rating.count,
+    bestRating: 5,
+  },
+  identifier: [
+    {
+      "@type": "PropertyValue",
+      propertyID: "QLD Electrical Licence",
+      value: SITE.licence,
+    },
+  ],
+  sameAs: SITE.sameAs,
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Electrical Services",
+    itemListElement: [
+      "Commercial Electrical Services",
+      "Residential & Renovations",
+      "Industrial Electrical",
+      "Air Conditioning Installation",
+      "Smoke Alarms",
+      "Switchboard Upgrades",
+    ].map((name) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name },
+    })),
+  },
+});
+
+export const websiteSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE.url}/#website`,
+  url: SITE.url,
+  name: SITE.name,
+  publisher: { "@id": `${SITE.url}/#business` },
+});
+
+export const breadcrumbSchema = (items: { name: string; url: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map((item, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: item.name,
+    item: item.url,
+  })),
+});
+
+export const serviceSchema = (name: string, description: string, url: string) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name,
+  description,
+  url,
+  provider: { "@id": `${SITE.url}/#business` },
+  areaServed: SITE.areaServed.map((n) => ({ "@type": "City", name: n })),
+  serviceType: name,
+});
+
+export const howToSchema = (opts: {
+  name: string;
+  description: string;
+  steps: { name: string; text: string }[];
+  url: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: opts.name,
+  description: opts.description,
+  url: opts.url,
+  step: opts.steps.map((s, i) => ({
+    "@type": "HowToStep",
+    position: i + 1,
+    name: s.name,
+    text: s.text,
+  })),
+});

@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
+import { JsonLd, howToSchema, breadcrumbSchema } from "@/lib/schema";
+import { SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "No Hot Water — Troubleshooting Guide",
+  description:
+    "No hot water at home? Follow our 4-step guide to check for leaks, tank level, and power supply before calling a technician. Brisbane electrician advice.",
+  alternates: { canonical: `${SITE.url}/guides/no-hot-water` },
+};
 
 const steps = [
   {
@@ -31,6 +41,22 @@ const steps = [
 export default function NoHotWaterPage() {
   return (
     <>
+      <JsonLd
+        data={howToSchema({
+          name: "How to Troubleshoot No Hot Water",
+          description:
+            "4 steps to diagnose a hot water system failure before calling an electrician or plumber.",
+          url: `${SITE.url}/guides/no-hot-water`,
+          steps: steps.map((s) => ({ name: s.title, text: s.content })),
+        })}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: SITE.url },
+          { name: "Guides", url: `${SITE.url}/guides/no-hot-water` },
+          { name: "No Hot Water", url: `${SITE.url}/guides/no-hot-water` },
+        ])}
+      />
       <ServicePageHero
         overline="Troubleshooting Guide"
         title="No Hot Water"

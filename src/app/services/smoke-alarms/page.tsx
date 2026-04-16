@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
+import { JsonLd, serviceSchema, breadcrumbSchema } from "@/lib/schema";
+import { SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Smoke Alarm Installation & Compliance Brisbane",
+  description:
+    "Interconnected smoke alarm installation and compliance testing to AS3786 and QLD 2027 requirements. Hardwired and 10-year battery-backup options.",
+  alternates: { canonical: `${SITE.url}/services/smoke-alarms` },
+};
 
 const features = [
   {
@@ -50,6 +60,20 @@ const placements = [
 export default function SmokeAlarmsPage() {
   return (
     <>
+      <JsonLd
+        data={serviceSchema(
+          "Smoke Alarm Installation & Compliance",
+          "Installation and compliance testing to AS3786 and QLD 2027 interconnected-alarm requirements for homes and rental properties.",
+          `${SITE.url}/services/smoke-alarms`
+        )}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: SITE.url },
+          { name: "Services", url: `${SITE.url}/services/smoke-alarms` },
+          { name: "Smoke Alarms", url: `${SITE.url}/services/smoke-alarms` },
+        ])}
+      />
       <ServicePageHero
         overline="Services"
         title="Smoke Alarms"
