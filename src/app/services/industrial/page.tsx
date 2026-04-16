@@ -60,6 +60,7 @@ export default function IndustrialPage() {
         title="Industrial Electrical"
         description="Specialist maintenance and installation for large industrial premises across Brisbane. From 3-phase machinery connections to comprehensive plant equipment servicing, our team keeps your operations powered and compliant."
         image="/images/20221111-img_1080-pano-5243x3382.jpg"
+        imagePosition="center 75%"
       />
 
       {/* 24/7 Banner */}

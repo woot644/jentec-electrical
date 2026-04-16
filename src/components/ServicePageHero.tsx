@@ -3,11 +3,13 @@ export default function ServicePageHero({
   title,
   description,
   image,
+  imagePosition = "center",
 }: {
   overline: string;
   title: string;
   description: string;
   image?: string;
+  imagePosition?: string;
 }) {
   return (
     <section className="relative py-24 sm:py-32 overflow-hidden min-h-[420px] flex items-center">
@@ -18,6 +20,7 @@ export default function ServicePageHero({
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover"
+            style={{ objectPosition: imagePosition }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
