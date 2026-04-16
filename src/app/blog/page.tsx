@@ -24,6 +24,7 @@ export default function BlogPage() {
         overline="Blog"
         title="News & Safety Tips"
         description="Stay informed with the latest electrical safety advice, industry news, and tips from the Jentech Electrical team."
+        image="/images/hero-blog.webp"
       />
 
       {/* Blog Grid */}

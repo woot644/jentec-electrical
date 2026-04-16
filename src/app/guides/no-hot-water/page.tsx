@@ -35,6 +35,7 @@ export default function NoHotWaterPage() {
         overline="Troubleshooting Guide"
         title="No Hot Water"
         description="Lost hot water at home? Follow these steps to identify common causes before calling a technician. Most issues can be diagnosed quickly."
+        image="/images/hero-no-hot-water.webp"
       />
 
       {/* Video */}
