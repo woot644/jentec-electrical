@@ -26,16 +26,12 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded border-2 border-neon flex items-center justify-center neon-border">
-              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-neon">
-                <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" />
-              </svg>
-            </div>
-            <div>
-              <span className="text-xl font-bold text-white tracking-tight">JENTECH</span>
-              <span className="text-xl font-light text-neon tracking-tight"> ELECTRICAL</span>
-            </div>
+          <Link href="/" className="flex items-center group" aria-label="Jentech Electrical home">
+            <img
+              src="/logo/jentech-logo.png"
+              alt="Jentech Electrical — Powering positive connections"
+              className="h-14 w-auto transition-opacity group-hover:opacity-90"
+            />
           </Link>
 
           {/* Desktop Nav */}

@@ -45,17 +45,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded border-2 border-neon flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-neon">
-                  <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" />
-                </svg>
-              </div>
-              <div>
-                <span className="text-lg font-bold text-white">JENTECH</span>
-                <span className="text-lg font-light text-neon"> ELECTRICAL</span>
-              </div>
-            </div>
+            <Link href="/" className="inline-block mb-6" aria-label="Jentech Electrical home">
+              <img
+                src="/logo/jentech-logo.png"
+                alt="Jentech Electrical — Powering positive connections"
+                className="h-16 w-auto"
+              />
+            </Link>
             <p className="text-text-secondary text-sm leading-relaxed mb-6">
               Premium electrical service with concierge-style customer care. Family-owned, Brisbane-based, and always available when you need us.
             </p>
