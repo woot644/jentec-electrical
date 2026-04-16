@@ -170,9 +170,12 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Service Area</h3>
+                    <h3 className="font-bold mb-1">Based in Brisbane</h3>
                     <p className="text-text-secondary">
-                      Greater Brisbane &amp; Toowoomba Region
+                      Brisbane, Queensland 4000
+                    </p>
+                    <p className="text-xs text-text-muted mt-2">
+                      Mobile service — we come to you
                     </p>
                     <div className="flex items-center gap-2 mt-3">
                       <svg
@@ -197,27 +200,63 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map placeholder */}
-              <div className="bg-surface-card border border-border rounded-lg overflow-hidden">
-                <div className="h-64 bg-surface-elevated flex items-center justify-center">
-                  <div className="text-center">
-                    <svg
-                      className="w-12 h-12 text-border mx-auto mb-3"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={1}
+              {/* Service Area */}
+              <div className="card-hover bg-surface-card rounded-lg p-8">
+                <h3 className="font-bold mb-3">Service Area</h3>
+                <p className="text-sm text-text-secondary mb-4">
+                  We service Greater Brisbane, the Gold Coast hinterland, and the Toowoomba region.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Brisbane CBD",
+                    "Paddington",
+                    "Bulimba",
+                    "New Farm",
+                    "Fortitude Valley",
+                    "Wilston",
+                    "Newstead",
+                    "Teneriffe",
+                    "Hamilton",
+                    "Ascot",
+                    "Bundall",
+                    "Helensvale",
+                    "Noosa",
+                    "Toowoomba",
+                  ].map((suburb) => (
+                    <span
+                      key={suburb}
+                      className="text-xs px-2.5 py-1 rounded bg-neon-glow border border-neon/20 text-neon"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z"
-                      />
-                    </svg>
-                    <p className="text-sm text-text-muted">
-                      Map &mdash; Greater Brisbane &amp; Toowoomba
-                    </p>
-                  </div>
+                      {suburb}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Map — Google Business Profile */}
+              <div className="bg-surface-card border border-border rounded-lg overflow-hidden">
+                <div className="h-72 relative">
+                  <iframe
+                    src="https://maps.google.com/maps?cid=14536006754446114868&output=embed"
+                    title="Jentech Electrical on Google Maps"
+                    loading="lazy"
+                    className="w-full h-full border-0"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+                <div className="p-4 border-t border-border flex items-center justify-between gap-4 flex-wrap">
+                  <p className="text-xs text-text-muted">
+                    View our Google Business Profile for directions and reviews.
+                  </p>
+                  <a
+                    href="https://maps.google.com/maps?cid=14536006754446114868"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-bold text-neon hover:underline tracking-wider uppercase"
+                  >
+                    Open in Google Maps →
+                  </a>
                 </div>
               </div>
             </div>
