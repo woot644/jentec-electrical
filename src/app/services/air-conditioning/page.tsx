@@ -95,7 +95,7 @@ export default function AirConditioningPage() {
               { ...features[0], img: "/images/20221005-img_9858.webp" },
               { ...features[1], img: "/images/20221005-img_0104.webp" },
               { ...features[2], img: "/images/20221005-img_9887.webp" },
-              { ...features[3], img: "/images/2025-ac-installation-special.webp" },
+              { ...features[3], img: "/images/ac-ducted.webp" },
             ].map((f) => (
               <div key={f.title} className="card-hover bg-surface-card rounded-lg overflow-hidden">
                 <div className="h-56 overflow-hidden border-b border-border">
