@@ -128,8 +128,12 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.error("Contact form error:", err);
     const msg = err instanceof Error ? err.message : "Unknown error";
+    // DEBUG: surface underlying error while we smoke-test the Resend setup
     return NextResponse.json(
-      { error: "Failed to send message. Please call us directly on 07 3914 9696." },
+      {
+        error: "Failed to send message. Please call us directly on 07 3914 9696.",
+        debug: msg,
+      },
       { status: 500 }
     );
   }
