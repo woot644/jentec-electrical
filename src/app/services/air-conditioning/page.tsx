@@ -81,6 +81,7 @@ export default function AirConditioningPage() {
         title="Air Conditioning"
         description="Split system installations and year-round servicing to keep your home or business comfortable in Brisbane's climate. Licensed, experienced, and trusted by hundreds of Brisbane households and businesses."
         image="/images/ac-ducted.webp"
+        imagePosition="center top"
       />
 
       {/* Features */}
