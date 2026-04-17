@@ -90,9 +90,12 @@ const sections = [
     heading: "10. Contact us",
     body: [
       "Jentech Electrical",
+      "6/190 Station Rd, Yeerongpilly QLD 4105",
       "Phone: 07 3914 9696",
       "Email: info@jentechelectrical.com.au",
+      "ABN: 46 611 087 462",
       "QLD Electrical Licence: 80766",
+      "ARC Refrigerant Handling Licence: AU068040",
     ],
   },
 ];

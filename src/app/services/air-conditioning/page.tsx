@@ -9,7 +9,7 @@ import { airConditioningFAQs } from "@/data/faqs";
 export const metadata: Metadata = {
   title: "Air Conditioning Installation & Servicing Brisbane",
   description:
-    "Split-system and multi-split air conditioning installations, servicing and repairs across Greater Brisbane. Licensed electricians, fair pricing, 5-year warranties.",
+    "Split system and ducted air conditioning installations, servicing and repairs across Greater Brisbane. Licensed electricians, ARC-certified refrigerant handling, 5-year warranties.",
   alternates: { canonical: `${SITE.url}/services/air-conditioning` },
 };
 
@@ -42,8 +42,8 @@ const features = [
     ),
   },
   {
-    title: "Multi-Split Systems",
-    desc: "Need to cool multiple rooms from a single outdoor unit? Multi-split systems are an efficient solution for homes and offices where space or aesthetics limit the number of outdoor units. We design and install multi-split configurations with individually controlled indoor units, allowing different temperatures in different zones for personalised comfort and energy savings.",
+    title: "Ducted Air Conditioning",
+    desc: "For whole-home or whole-office comfort, ducted air conditioning delivers consistent temperatures across every zone with discreet ceiling vents and a single controller. We install ducted systems with zone control for personalised comfort and energy savings, and we handle the full package — design, ductwork coordination with the builder, refrigerant line install, controller setup, and full commissioning.",
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
@@ -65,7 +65,7 @@ export default function AirConditioningPage() {
       <JsonLd
         data={serviceSchema(
           "Air Conditioning Installation",
-          "Split-system and multi-split installations, servicing, repairs and maintenance for Brisbane homes and businesses.",
+          "Split system and ducted installations, servicing, repairs and maintenance for Brisbane homes and businesses.",
           `${SITE.url}/services/air-conditioning`
         )}
       />

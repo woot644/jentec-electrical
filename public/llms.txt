@@ -1,11 +1,15 @@
 # Jentech Electrical
 
-> Brisbane's premium electrician. Family-owned, licensed, 24/7 emergency service. Commercial, residential, industrial, air conditioning, smoke alarms, switchboard upgrades.
+> Brisbane's premium electrician. Family-owned, licensed, 24/7 emergency service. Commercial, residential, industrial, air conditioning, smoke alarms, switchboard upgrades, UPS systems.
 
-QLD Electrical Licence: 80766
+Address: 6/190 Station Rd, Yeerongpilly QLD 4105
 Phone: 07 3914 9696
 Email: info@jentechelectrical.com.au
-Service area: Greater Brisbane, Gold Coast hinterland, Toowoomba region
+Office hours: Mon–Fri 9:00am–4:00pm (24/7 emergency service available)
+QLD Electrical Licence: 80766
+ARC Refrigerant Handling Licence (RTA): AU068040
+ABN: 46 611 087 462
+Service area: Greater Brisbane and the Gold Coast hinterland
 Rating: 5.0 stars (158 Google reviews)
 
 ## Services
@@ -16,6 +20,7 @@ Rating: 5.0 stars (158 Google reviews)
 - [Air Conditioning](https://jentec-electrical.vercel.app/services/air-conditioning): Split system installations, year-round servicing, repairs and multi-split design.
 - [Smoke Alarms](https://jentec-electrical.vercel.app/services/smoke-alarms): Installation and compliance testing to AS3786 and QLD 2027 interconnected-alarm requirements.
 - [Switchboards](https://jentec-electrical.vercel.app/services/switchboards): Upgrades to modern RCD-protected switchboards and safety inspections.
+- [UPS Systems](https://jentec-electrical.vercel.app/services/ups-systems): Authorised PSS Distributors service agent. NDIS-compliant UPS installations and long-life batteries for QLD conditions.
 
 ## Emergency
 

@@ -73,6 +73,16 @@ const services = [
       </svg>
     ),
   },
+  {
+    title: "UPS Systems",
+    desc: "PSS Distributors service agent. NDIS UPS systems and long-life batteries for QLD conditions.",
+    href: "/services/ups-systems",
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5a2.25 2.25 0 0 1 2.25 2.25v8.25a2.25 2.25 0 0 1-2.25 2.25H3.75a2.25 2.25 0 0 1-2.25-2.25V9a2.25 2.25 0 0 1 2.25-2.25ZM7.5 10.5h.75v3h-.75v-3Zm3 0h.75v3h-.75v-3Zm3 0h.75v3h-.75v-3Z" />
+      </svg>
+    ),
+  },
 ];
 
 const reviews = [

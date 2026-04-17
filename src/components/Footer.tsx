@@ -7,11 +7,11 @@ const services = [
   { name: "Air Conditioning", href: "/services/air-conditioning" },
   { name: "Smoke Alarms", href: "/services/smoke-alarms" },
   { name: "Switchboards", href: "/services/switchboards" },
+  { name: "UPS Systems", href: "/services/ups-systems" },
 ];
 
 const company = [
   { name: "Emergency Electrician", href: "/emergency-electrician-brisbane" },
-  { name: "Toowoomba", href: "/toowoomba-electrician" },
   { name: "Projects", href: "/projects" },
   { name: "Our Team", href: "/team" },
   { name: "Blog", href: "/blog" },
@@ -63,7 +63,13 @@ export default function Footer() {
                 <span className="text-neon font-medium">Licence:</span> 80766
               </p>
               <p className="text-text-secondary">
-                <span className="text-neon font-medium">Service Area:</span> Greater Brisbane &amp; Toowoomba
+                <span className="text-neon font-medium">RTA No.:</span> AU068040
+              </p>
+              <p className="text-text-secondary">
+                <span className="text-neon font-medium">ABN:</span> 46 611 087 462
+              </p>
+              <p className="text-text-secondary">
+                <span className="text-neon font-medium">Address:</span> 6/190 Station Rd, Yeerongpilly QLD 4105
               </p>
             </div>
           </div>
@@ -117,7 +123,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-text-muted text-xs uppercase tracking-wider mb-1">Office Hours</p>
-                <p className="text-text-secondary">Mon &ndash; Fri: 9:00am &ndash; 5:00pm</p>
+                <p className="text-text-secondary">Mon &ndash; Fri: 9:00am &ndash; 4:00pm</p>
                 <p className="text-neon font-medium text-xs mt-1">Emergency service 24/7</p>
               </div>
               <div className="flex gap-3 pt-2">

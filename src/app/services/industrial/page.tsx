@@ -59,7 +59,7 @@ const industrialServices = [
   "Motor control & variable speed drives",
   "Power factor correction",
   "Cable tray & conduit installation",
-  "Thermal imaging & fault detection",
+  "Fault detection & diagnostics",
   "Preventative maintenance programs",
   "Testing & compliance certification",
 ];

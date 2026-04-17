@@ -9,7 +9,10 @@ const services = [
   { name: "Air Conditioning", href: "/services/air-conditioning" },
   { name: "Smoke Alarms", href: "/services/smoke-alarms" },
   { name: "Switchboards", href: "/services/switchboards" },
+  { name: "UPS Systems", href: "/services/ups-systems" },
 ];
+
+const BOOKING_URL = "https://book.servicem8.com/request_service_booking?strVendorUUID=fe4ceb21-56b9-4e0e-bb43-9883d836069b";
 
 const guides = [
   { name: "Loss of Power", href: "/guides/loss-of-power" },
@@ -96,11 +99,15 @@ export default function Navigation() {
           </div>
 
           {/* CTA + Availability */}
-          <div className="hidden lg:flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-neon pulse-neon" />
-              <span className="text-xs font-medium text-neon">24/7 AVAILABLE</span>
-            </div>
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="neon-btn-outline px-4 py-2.5 rounded text-sm tracking-wide"
+            >
+              BOOK ONLINE
+            </a>
             <a href="tel:0739149696" className="neon-btn px-5 py-2.5 rounded text-sm tracking-wide">
               CALL 07 3914 9696
             </a>
@@ -161,6 +168,14 @@ export default function Navigation() {
               </div>
               <a href="tel:0739149696" className="neon-btn block text-center px-5 py-3 rounded text-sm tracking-wide">
                 CALL 07 3914 9696
+              </a>
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="neon-btn-outline block text-center px-5 py-3 rounded text-sm tracking-wide"
+              >
+                BOOK ONLINE
               </a>
             </div>
           </div>

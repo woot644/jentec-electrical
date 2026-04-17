@@ -110,6 +110,26 @@ export default async function ProjectDetailPage({
         </div>
       </section>
 
+      {/* Gallery */}
+      {project.gallery && project.gallery.length > 0 && (
+        <section className="py-20 bg-black border-t border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold mb-10">Project Gallery</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {project.gallery.map((img, i) => (
+                <div key={i} className="aspect-[4/3] overflow-hidden rounded-lg bg-surface-elevated">
+                  <img
+                    src={img}
+                    alt={`${project.name} — image ${i + 1}`}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Related */}
       {related.length > 0 && (
         <section className="py-20 bg-surface border-t border-border">

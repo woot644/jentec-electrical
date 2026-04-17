@@ -40,7 +40,7 @@ const steps = [
     number: 5,
     title: "Contact Jentech Electrical",
     content:
-      "If you cannot restore power, or if a switch keeps tripping, call our team. We provide 24/7 emergency electrical service across Greater Brisbane and the Toowoomba Region.",
+      "If you cannot restore power, or if a switch keeps tripping, call our team. We provide 24/7 emergency electrical service across Greater Brisbane and the Gold Coast.",
   },
 ];
 

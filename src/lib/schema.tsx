@@ -25,10 +25,11 @@ export const localBusinessSchema = () => ({
   priceRange: SITE.priceRange,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Brisbane",
-    addressRegion: "QLD",
-    postalCode: "4000",
-    addressCountry: "AU",
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.suburb,
+    addressRegion: SITE.address.state,
+    postalCode: SITE.address.postcode,
+    addressCountry: SITE.address.country,
   },
   geo: {
     "@type": "GeoCoordinates",
@@ -54,6 +55,16 @@ export const localBusinessSchema = () => ({
       propertyID: "QLD Electrical Licence",
       value: SITE.licence,
     },
+    {
+      "@type": "PropertyValue",
+      propertyID: "ABN",
+      value: SITE.abn,
+    },
+    {
+      "@type": "PropertyValue",
+      propertyID: "ARC Refrigerant Handling Licence",
+      value: SITE.rtaLicence,
+    },
   ],
   sameAs: SITE.sameAs,
   hasOfferCatalog: {
@@ -66,6 +77,7 @@ export const localBusinessSchema = () => ({
       "Air Conditioning Installation",
       "Smoke Alarms",
       "Switchboard Upgrades",
+      "UPS Systems (PSS Distributors service agent, NDIS)",
     ].map((name) => ({
       "@type": "Offer",
       itemOffered: { "@type": "Service", name },

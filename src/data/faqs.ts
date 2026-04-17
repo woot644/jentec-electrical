@@ -52,8 +52,8 @@ export const industrialFAQs: FAQ[] = [
     a: "Industrial installations in Queensland must comply with AS/NZS 3000:2018 (Wiring Rules), AS/NZS 3012 (for construction sites), AS/NZS 4024 (safety of machinery), and the Electrical Safety Act 2002. We maintain current knowledge of all applicable standards and deliver installations that pass independent inspection every time.",
   },
   {
-    q: "How often should industrial switchboards be thermographically inspected?",
-    a: "Annual thermal imaging of switchboards is best practice and is often a condition of insurance policies. Hot-spot detection picks up loose terminations, overloaded circuits, and failing components before they fail catastrophically. Our team carries calibrated thermal cameras and produces audit-ready reports with documented temperature readings per phase.",
+    q: "How often should industrial switchboards be inspected?",
+    a: "Annual visual and functional switchboard inspections are best practice and are often a condition of insurance policies. Inspections pick up loose terminations, signs of overheating, corrosion, and failing components before they fail catastrophically. We produce audit-ready reports with documented findings and recommended remedial actions per phase.",
   },
   {
     q: "Can you design and manufacture custom industrial switchboards?",
@@ -61,7 +61,7 @@ export const industrialFAQs: FAQ[] = [
   },
   {
     q: "Do you provide preventative maintenance programs?",
-    a: "Yes. For industrial clients we offer scheduled preventative maintenance programs tailored to your equipment and operating environment. A typical program includes quarterly switchboard inspections, annual thermal imaging, 6-monthly RCD testing, emergency lighting testing, and machinery-specific safety inspections. All documentation is kept for the full 5-year compliance retention period.",
+    a: "Yes. For industrial clients we offer scheduled preventative maintenance programs tailored to your equipment and operating environment. A typical program includes quarterly switchboard inspections, 6-monthly RCD testing, emergency lighting testing, and machinery-specific safety inspections. All documentation is kept for the full 5-year compliance retention period.",
   },
   {
     q: "Do you respond to industrial breakdowns outside business hours?",
@@ -80,7 +80,7 @@ export const airConditioningFAQs: FAQ[] = [
   },
   {
     q: "What refrigerant do modern split systems use?",
-    a: "Most new split systems sold in Australia use R32 refrigerant, which has around one-third the global warming potential of older R410A systems. Handling refrigerant requires an ARC licence (Australian Refrigerant Handling), which our team holds. We dispose of old refrigerant correctly and charge new systems to manufacturer specification.",
+    a: "Most new split systems sold in Australia use R32 refrigerant, which has around one-third the global warming potential of older R410A systems. Handling refrigerant legally requires an ARC licence (Australian Refrigerant Handling) — ours is RTA No. AU068040. We dispose of old refrigerant correctly and charge new systems to manufacturer specification.",
   },
   {
     q: "Does the TCL special include removal of my old unit?",

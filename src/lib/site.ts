@@ -6,9 +6,21 @@ export const SITE = {
   phoneDisplay: "07 3914 9696",
   email: "info@jentechelectrical.com.au",
   licence: "80766",
+  rtaLicence: "AU068040",
+  abn: "46 611 087 462",
   priceRange: "$$",
+  bookingUrl:
+    "https://book.servicem8.com/request_service_booking?strVendorUUID=fe4ceb21-56b9-4e0e-bb43-9883d836069b",
+  address: {
+    street: "6/190 Station Rd",
+    suburb: "Yeerongpilly",
+    state: "QLD",
+    postcode: "4105",
+    country: "AU",
+  },
   areaServed: [
-    "Brisbane",
+    "Yeerongpilly",
+    "Brisbane CBD",
     "Paddington",
     "Bulimba",
     "New Farm",
@@ -21,9 +33,8 @@ export const SITE = {
     "Bundall",
     "Helensvale",
     "Noosa",
-    "Toowoomba",
   ],
-  geo: { lat: -27.4698, lng: 153.0251 },
+  geo: { lat: -27.5422, lng: 153.0257 },
   rating: { value: 5.0, count: 158 },
   gbpCid: "14536006754446114868",
   sameAs: [
@@ -32,6 +43,7 @@ export const SITE = {
     "https://maps.google.com/maps?cid=14536006754446114868",
   ],
   hours: [
-    { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "17:00" },
+    { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "16:00" },
   ],
+  hoursDisplay: "Mon–Fri: 9:00am–4:00pm",
 } as const;

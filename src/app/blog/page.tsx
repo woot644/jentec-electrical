@@ -108,7 +108,7 @@ export default function BlogPage() {
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto mb-8">
             Our team is available 24/7 for emergency electrical service across
-            Greater Brisbane and the Toowoomba Region.
+            Greater Brisbane and the Gold Coast.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

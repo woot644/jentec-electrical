@@ -5,6 +5,7 @@ export type Project = {
   tagline: string;
   description: string[];
   image: string;
+  gallery?: string[];
   status?: "IN PROGRESS";
   credits?: { role: string; name: string }[];
 };

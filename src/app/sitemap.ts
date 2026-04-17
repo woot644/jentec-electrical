@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.url}/services/smoke-alarms`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
     { url: `${SITE.url}/services/switchboards`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
     { url: `${SITE.url}/emergency-electrician-brisbane`, changeFrequency: "monthly", priority: 0.95, lastModified: now },
-    { url: `${SITE.url}/toowoomba-electrician`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    { url: `${SITE.url}/services/ups-systems`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
     { url: `${SITE.url}/team`, changeFrequency: "monthly", priority: 0.6, lastModified: now },
     { url: `${SITE.url}/privacy`, changeFrequency: "yearly", priority: 0.3, lastModified: now },
     { url: `${SITE.url}/guides/loss-of-power`, changeFrequency: "yearly", priority: 0.7, lastModified: now },

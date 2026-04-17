@@ -2,6 +2,9 @@
 import { useState } from "react";
 import ServicePageHero from "@/components/ServicePageHero";
 
+const BOOKING_URL =
+  "https://book.servicem8.com/request_service_booking?strVendorUUID=fe4ceb21-56b9-4e0e-bb43-9883d836069b";
+
 export default function ContactPage() {
   const [form, setForm] = useState({
     name: "",
@@ -9,12 +12,27 @@ export default function ContactPage() {
     phone: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+  const submitted = status === "sent";
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // Mock submit
-    setSubmitted(true);
+    setStatus("sending");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = (await res.json().catch(() => ({}))) as { error?: string };
+      if (!res.ok) throw new Error(data.error || "Something went wrong — please call us instead.");
+      setStatus("sent");
+    } catch (err) {
+      setStatus("error");
+      setErrorMsg(err instanceof Error ? err.message : "Unexpected error");
+    }
   }
 
   return (
@@ -120,7 +138,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold mb-1">Office Hours</h3>
                     <p className="text-text-secondary">
-                      Monday &ndash; Friday: 9:00am &ndash; 5:00pm
+                      Monday &ndash; Friday: 9:00am &ndash; 4:00pm
                     </p>
                     <div className="flex items-center gap-2 mt-2">
                       <span className="w-2.5 h-2.5 rounded-full bg-neon pulse-neon" />
@@ -156,44 +174,75 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Based in Brisbane</h3>
+                    <h3 className="font-bold mb-1">Our Office</h3>
                     <p className="text-text-secondary">
-                      Brisbane, Queensland 4000
+                      6/190 Station Rd
+                      <br />
+                      Yeerongpilly QLD 4105
                     </p>
-                    <p className="text-xs text-text-muted mt-2">
-                      Mobile service — we come to you
-                    </p>
-                    <div className="flex items-center gap-2 mt-3">
-                      <svg
-                        className="w-4 h-4 text-neon"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"
-                        />
-                      </svg>
-                      <span className="text-sm text-text-muted">
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 mt-4 text-xs">
+                      <span className="text-text-muted">
                         QLD Licence{" "}
                         <span className="text-white font-semibold">80766</span>
+                      </span>
+                      <span className="text-text-muted">
+                        RTA{" "}
+                        <span className="text-white font-semibold">AU068040</span>
+                      </span>
+                      <span className="text-text-muted">
+                        ABN{" "}
+                        <span className="text-white font-semibold">46 611 087 462</span>
                       </span>
                     </div>
                   </div>
                 </div>
               </div>
 
+              {/* Online booking */}
+              <div className="bg-neon-glow border border-neon/30 rounded-lg p-8">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-neon/10 border border-neon/30 flex items-center justify-center">
+                    <svg
+                      className="w-6 h-6 text-neon"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-bold mb-1">Book a Service Online</h3>
+                    <p className="text-sm text-text-secondary">
+                      Prefer to pick your own time? Book through ServiceM8 —
+                      real-time availability, no phone required.
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="neon-btn w-full block text-center px-6 py-3 rounded text-sm tracking-wider"
+                >
+                  BOOK A SERVICE
+                </a>
+              </div>
+
               {/* Service Area */}
               <div className="card-hover bg-surface-card rounded-lg p-8">
                 <h3 className="font-bold mb-3">Service Area</h3>
                 <p className="text-sm text-text-secondary mb-4">
-                  We service Greater Brisbane, the Gold Coast hinterland, and the Toowoomba region.
+                  We service Greater Brisbane and the Gold Coast hinterland from our Yeerongpilly office.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
+                    "Yeerongpilly",
                     "Brisbane CBD",
                     "Paddington",
                     "Bulimba",
@@ -207,7 +256,6 @@ export default function ContactPage() {
                     "Bundall",
                     "Helensvale",
                     "Noosa",
-                    "Toowoomba",
                   ].map((suburb) => (
                     <span
                       key={suburb}
@@ -358,11 +406,17 @@ export default function ContactPage() {
                         placeholder="Tell us about your project or issue..."
                       />
                     </div>
+                    {status === "error" && (
+                      <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 text-sm text-red-400">
+                        {errorMsg}
+                      </div>
+                    )}
                     <button
                       type="submit"
-                      className="neon-btn w-full px-8 py-4 rounded text-base tracking-wider"
+                      disabled={status === "sending"}
+                      className="neon-btn w-full px-8 py-4 rounded text-base tracking-wider disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      SEND MESSAGE
+                      {status === "sending" ? "SENDING…" : "SEND MESSAGE"}
                     </button>
                     <p className="text-xs text-text-muted text-center">
                       Or call us directly at{" "}
