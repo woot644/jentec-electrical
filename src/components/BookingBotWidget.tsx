@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import BookingCalendar from "./BookingCalendar";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -40,6 +41,7 @@ export default function BookingBotWidget() {
   const [sending, setSending] = useState(false);
   const [action, setAction] = useState<ChatAction | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [calendarOpen, setCalendarOpen] = useState(false);
   const conversationIdRef = useRef<string | null>(null);
   const visitorIdRef = useRef<string | null>(null);
   const categoryRef = useRef<string | null>(null);
@@ -118,7 +120,14 @@ export default function BookingBotWidget() {
     setAction(null);
     setError(null);
     setInput("");
+    setCalendarOpen(false);
     setStage("intro");
+  }
+
+  function handleCalendarPick(isoDate: string, label: string) {
+    setCalendarOpen(false);
+    if (stage !== "chat") setStage("chat");
+    send(`I'd like to book for ${label} (${isoDate}).`);
   }
 
   function pickEmergency(isEmergency: boolean) {
@@ -201,7 +210,7 @@ export default function BookingBotWidget() {
       {/* Chat panel */}
       {open && (
         <div
-          className="fixed bottom-24 right-5 z-50 w-[min(22rem,calc(100vw-2.5rem))] h-[min(32rem,calc(100vh-8rem))] flex flex-col rounded-xl overflow-hidden"
+          className="fixed bottom-24 right-5 z-50 w-[min(22rem,calc(100vw-2.5rem))] h-[min(32rem,calc(100vh-8rem))] flex flex-col rounded-xl overflow-hidden relative"
           style={{
             background: "var(--surface-elevated)",
             border: "1px solid var(--border-light)",
@@ -427,37 +436,61 @@ export default function BookingBotWidget() {
 
           {/* Input — hidden during emergency */}
           {stage !== "emergency" && (
-            <form
-              onSubmit={handleSubmit}
-              className="flex gap-2 px-3 py-3"
-              style={{ background: "var(--surface-card)", borderTop: "1px solid var(--border)" }}
-            >
-              <input
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder={stage === "chat" ? "Ask or book…" : "Or type your question…"}
-                disabled={sending}
-                onFocus={() => {
-                  if (stage === "intro" || stage === "services") setStage("chat");
-                }}
-                className="flex-1 px-3 py-2 rounded-lg text-sm outline-none"
-                style={{
-                  background: "var(--surface)",
-                  color: "var(--text-primary)",
-                  border: "1px solid var(--border)",
-                }}
-                aria-label="Chat message"
-              />
-              <button
-                type="submit"
-                disabled={sending || !input.trim()}
-                className="px-4 py-2 rounded-lg text-sm font-bold disabled:opacity-40"
-                style={{ background: "var(--neon)", color: "#000" }}
-              >
-                Send
-              </button>
-            </form>
+            <div style={{ background: "var(--surface-card)", borderTop: "1px solid var(--border)" }}>
+              {stage === "chat" && (
+                <div className="flex justify-center pt-2">
+                  <button
+                    type="button"
+                    onClick={() => setCalendarOpen(true)}
+                    className="text-xs px-3 py-1 rounded-full"
+                    style={{
+                      background: "var(--surface)",
+                      color: "var(--neon)",
+                      border: "1px solid rgba(136,189,64,0.4)",
+                    }}
+                  >
+                    📅 Pick a date
+                  </button>
+                </div>
+              )}
+              <form onSubmit={handleSubmit} className="flex gap-2 px-3 py-3">
+                <input
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder={stage === "chat" ? "Ask or book…" : "Or type your question…"}
+                  disabled={sending}
+                  onFocus={() => {
+                    if (stage === "intro" || stage === "services") setStage("chat");
+                  }}
+                  className="flex-1 px-3 py-2 rounded-lg text-sm outline-none"
+                  style={{
+                    background: "var(--surface)",
+                    color: "var(--text-primary)",
+                    border: "1px solid var(--border)",
+                  }}
+                  aria-label="Chat message"
+                />
+                <button
+                  type="submit"
+                  disabled={sending || !input.trim()}
+                  className="px-4 py-2 rounded-lg text-sm font-bold disabled:opacity-40"
+                  style={{ background: "var(--neon)", color: "#000" }}
+                >
+                  Send
+                </button>
+              </form>
+            </div>
+          )}
+
+          {/* Calendar overlay */}
+          {calendarOpen && (
+            <BookingCalendar
+              botUrl={botUrl}
+              businessId={businessId}
+              onPick={handleCalendarPick}
+              onClose={() => setCalendarOpen(false)}
+            />
           )}
         </div>
       )}
