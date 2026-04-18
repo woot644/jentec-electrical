@@ -18,15 +18,15 @@ const EMERGENCY_PHONE = "07 3914 9696";
 const EMERGENCY_TEL = "tel:0739149696";
 
 const SERVICES = [
-  { label: "Commercial", prompt: "I need a commercial electrician." },
-  { label: "Renovations", prompt: "I'm doing a renovation and need an electrician." },
-  { label: "New Build", prompt: "I'm starting a new build and need an electrician." },
-  { label: "Industrial", prompt: "I need an industrial electrician." },
-  { label: "Air Conditioning", prompt: "I need help with air conditioning." },
-  { label: "Smoke Alarms", prompt: "I need smoke alarms installed or checked." },
-  { label: "Switchboards", prompt: "I need a switchboard upgrade or repair." },
-  { label: "UPS Systems", prompt: "I'm interested in UPS / backup power systems." },
-  { label: "Something else", prompt: "I need help with something else — can I describe it?" },
+  { label: "Commercial", category: "commercial", prompt: "I need a commercial electrician." },
+  { label: "Renovations", category: "residential", prompt: "I'm doing a renovation and need an electrician." },
+  { label: "New Build", category: "new-build", prompt: "I'm starting a new build and need an electrician." },
+  { label: "Industrial", category: "industrial", prompt: "I need an industrial electrician." },
+  { label: "Air Conditioning", category: "air-conditioning", prompt: "I need help with air conditioning." },
+  { label: "Smoke Alarms", category: "smoke-alarms", prompt: "I need smoke alarms installed or checked." },
+  { label: "Switchboards", category: "switchboards", prompt: "I need a switchboard upgrade or repair." },
+  { label: "UPS Systems", category: "ups-systems", prompt: "I'm interested in UPS / backup power systems." },
+  { label: "Something else", category: null, prompt: "I need help with something else — can I describe it?" },
 ];
 
 export default function BookingBotWidget() {
@@ -42,6 +42,7 @@ export default function BookingBotWidget() {
   const [error, setError] = useState<string | null>(null);
   const conversationIdRef = useRef<string | null>(null);
   const visitorIdRef = useRef<string | null>(null);
+  const categoryRef = useRef<string | null>(null);
   const threadRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -83,6 +84,7 @@ export default function BookingBotWidget() {
           visitorId: visitorIdRef.current,
           message: trimmed,
           conversationId: conversationIdRef.current,
+          category: categoryRef.current,
         }),
       });
       if (!res.ok) throw new Error(`Server returned ${res.status}`);
@@ -110,6 +112,7 @@ export default function BookingBotWidget() {
 
   function resetConversation() {
     conversationIdRef.current = null;
+    categoryRef.current = null;
     localStorage.removeItem(STORAGE_CONVO);
     setMessages([]);
     setAction(null);
@@ -126,13 +129,13 @@ export default function BookingBotWidget() {
     }
   }
 
-  function pickService(service: { label: string; prompt: string }) {
+  function pickService(service: { label: string; category: string | null; prompt: string }) {
+    categoryRef.current = service.category;
     setStage("chat");
     setMessages([
       { role: "user", content: service.label },
       { role: "assistant", content: "Got it — one sec…" },
     ]);
-    // Replace the placeholder with the real response
     (async () => {
       setSending(true);
       setError(null);
@@ -145,6 +148,7 @@ export default function BookingBotWidget() {
             visitorId: visitorIdRef.current,
             message: service.prompt,
             conversationId: conversationIdRef.current,
+            category: service.category,
           }),
         });
         if (!res.ok) throw new Error(`Server returned ${res.status}`);
