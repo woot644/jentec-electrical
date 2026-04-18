@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import BookingBotWidget from "@/components/BookingBotWidget";
 import { JsonLd, localBusinessSchema, websiteSchema } from "@/lib/schema";
 import { SITE } from "@/lib/site";
 import "./globals.css";
@@ -60,6 +61,7 @@ export default function RootLayout({
         <Navigation />
         <main className="flex-1 pt-20">{children}</main>
         <Footer />
+        <BookingBotWidget />
       </body>
     </html>
   );

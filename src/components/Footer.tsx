@@ -145,6 +145,19 @@ export default function Footer() {
           <p className="text-xs text-text-muted">
             &copy; {new Date().getFullYear()} Jentech Electrical. All rights reserved. QLD Licence No. 80766 &middot;{" "}
             <Link href="/privacy" className="hover:text-neon transition-colors">Privacy</Link>
+            {process.env.NEXT_PUBLIC_BOOKING_BOT_URL ? (
+              <>
+                {" "}&middot;{" "}
+                <a
+                  href={`${process.env.NEXT_PUBLIC_BOOKING_BOT_URL}/login`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-neon transition-colors"
+                >
+                  Staff login
+                </a>
+              </>
+            ) : null}
           </p>
           <p className="text-xs text-text-muted">
             Website by <a href="https://arclightdigital.com.au" target="_blank" rel="noopener noreferrer" className="text-neon hover:underline">Arclight Digital</a>
