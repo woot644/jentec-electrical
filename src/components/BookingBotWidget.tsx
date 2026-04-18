@@ -210,7 +210,7 @@ export default function BookingBotWidget() {
       {/* Chat panel */}
       {open && (
         <div
-          className="fixed bottom-24 right-5 z-50 w-[min(22rem,calc(100vw-2.5rem))] h-[min(32rem,calc(100vh-8rem))] flex flex-col rounded-xl overflow-hidden relative"
+          className="fixed bottom-24 right-5 z-50 w-[min(22rem,calc(100vw-2.5rem))] h-[min(32rem,calc(100vh-8rem))] flex flex-col rounded-xl overflow-hidden"
           style={{
             background: "var(--surface-elevated)",
             border: "1px solid var(--border-light)",
