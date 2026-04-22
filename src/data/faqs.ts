@@ -30,7 +30,7 @@ export const residentialFAQs: FAQ[] = [
   },
   {
     q: "Can you work on heritage-listed Queenslanders?",
-    a: "Yes — we specialise in it. Heritage and character-listed homes in Brisbane require careful planning to comply with both electrical regulations and heritage overlays. We've rewired dozens of 1900s–1940s Queenslanders across New Farm, Paddington, Bulimba, and Fortitude Valley, preserving original fixtures like pressed metal ceilings, stained glass, and antique pendants wherever possible.",
+    a: "Yes — we specialise in it. Heritage and character-listed homes in Brisbane require careful planning to comply with both electrical regulations and heritage overlays. We work on 1900s–1940s Queenslanders across Brisbane's inner-suburb character corridor, preserving original fixtures like pressed metal ceilings, stained glass, and antique pendants wherever possible.",
   },
   {
     q: "How long does a full house rewire take?",

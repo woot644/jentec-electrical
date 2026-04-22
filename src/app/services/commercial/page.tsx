@@ -7,11 +7,66 @@ import { SITE } from "@/lib/site";
 import { commercialFAQs } from "@/data/faqs";
 
 export const metadata: Metadata = {
-  title: "Commercial Electrician Brisbane",
+  title: "Commercial Electrician Brisbane | Fit-Outs, Compliance & 24/7 Service",
   description:
-    "Specialist commercial electricians for Brisbane businesses. Fit-outs, emergency breakdowns, testing & compliance, maintenance. QLD Licence 80766. 24/7 service.",
+    "Specialist commercial electricians for Brisbane businesses. Fit-outs, emergency breakdowns, AS/NZS 2293 emergency lighting, RCD testing, test-and-tag. QLD Licence 80766. 24/7 service.",
   alternates: { canonical: `${SITE.url}/services/commercial` },
 };
+
+const industriesServed = [
+  {
+    title: "Hospitality — Cafes, Restaurants, Bars",
+    desc: "Commercial kitchens, venue lighting, EFTPOS and POS infrastructure, emergency lighting to AS/NZS 2293, grease-trap and exhaust electrical. After-hours work standard so trading isn't disrupted.",
+  },
+  {
+    title: "Retail & Boutique",
+    desc: "Feature lighting for display, point-of-sale infrastructure, CCTV integration, back-of-house systems. Scheduled fit-out delivery to landlord handover windows.",
+  },
+  {
+    title: "Fitness & Wellness",
+    desc: "24/7 access control, dynamic lighting, smart TV integration, high-load equipment circuits, UPS for critical systems. NOFOMO Gym Helensvale and Bundall were ours.",
+  },
+  {
+    title: "Medical & Allied Health",
+    desc: "Dedicated medical-grade power for diagnostic equipment, emergency power compliance, sterile-area lighting, patient-safety earthing. Coordination with medical fit-out specialists.",
+  },
+  {
+    title: "Offices & Co-Working",
+    desc: "Desk-level power and data, meeting-room AV infrastructure, lighting zones tuned for day-long screen work, emergency lighting, after-hours maintenance.",
+  },
+  {
+    title: "Industrial & Workshops",
+    desc: "3-phase machinery, emergency stops, compressed-air and mechanical plant wiring, dedicated workshop lighting at correct lux levels.",
+  },
+];
+
+const processSteps = [
+  {
+    step: "01",
+    title: "Initial call &amp; site visit",
+    desc: "We respond inside 1 business day to commercial enquiries. A qualified electrician attends your premises to walk the scope, take measurements, and identify any compliance gaps.",
+  },
+  {
+    step: "02",
+    title: "Detailed scoped quote",
+    desc: "You receive a fixed-price quote typically within 3–5 business days. Every line item is described clearly — no vague lump-sum figures. After-hours loadings are included up front.",
+  },
+  {
+    step: "03",
+    title: "Schedule around your trading hours",
+    desc: "We plan the work to minimise disruption — evenings, early mornings, weekends, or shoulder trading periods. Any planned isolation is notified in advance with a defined window.",
+  },
+  {
+    step: "04",
+    title: "Delivery & testing",
+    desc: "Licensed electricians complete the work. Every new circuit is tested and commissioned. Certificate of Electrical Safety issued on completion for any regulated work.",
+  },
+  {
+    step: "05",
+    title: "Compliance handover",
+    desc: "We deliver audit-ready paperwork — RCD test records, emergency lighting logs, test-and-tag registers, commissioning data — in a single digital package kept for the 5-year retention period.",
+  },
+];
 
 const features = [
   {
@@ -170,6 +225,125 @@ export default function CommercialPage() {
               <a href="tel:0739149696" className="neon-btn px-6 py-3 rounded tracking-wider text-sm inline-block">
                 CALL NOW
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries We Serve */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">
+              Who We Serve
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Commercial verticals we work across
+            </h2>
+            <p className="text-text-secondary">
+              Every commercial vertical has its own compliance profile, lighting expectations, and load demands. We&apos;ve worked in all six below — the pattern of the job is different for each.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {industriesServed.map((ind) => (
+              <div
+                key={ind.title}
+                className="card-hover bg-surface-card border border-border rounded-lg p-8"
+              >
+                <h3 className="text-lg font-bold mb-3">{ind.title}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">{ind.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What to Expect / Process */}
+      <section className="py-24 bg-surface">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">
+              What to Expect
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold">
+              How a commercial job runs, start to finish
+            </h2>
+          </div>
+          <div className="space-y-5">
+            {processSteps.map((s) => (
+              <div
+                key={s.step}
+                className="flex gap-6 items-start bg-surface-card border border-border rounded-lg p-6"
+              >
+                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-neon-glow border border-neon/30 flex items-center justify-center">
+                  <span className="text-neon font-bold text-sm tracking-wider">{s.step}</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold mb-2">{s.title}</h3>
+                  <p className="text-text-secondary text-sm leading-relaxed">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance & Cost panels */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="bg-surface-card border border-border rounded-xl p-8">
+              <p className="text-xs font-bold text-neon uppercase tracking-[2px] mb-4">
+                Compliance &amp; Standards
+              </p>
+              <h3 className="text-2xl font-bold mb-4">The regulations we work to</h3>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Every commercial job is delivered to the current Australian Standards and Queensland regulations. The specific instruments that apply most:
+              </p>
+              <ul className="space-y-3 text-sm text-text-secondary">
+                <li><strong className="text-white">AS/NZS 3000:2018</strong> — the &quot;Wiring Rules&quot;, the foundation of all compliant electrical work in Australia.</li>
+                <li><strong className="text-white">AS/NZS 3760</strong> — test and tag of portable appliances. Testing intervals vary from 3 months (construction) to 5 years (low-risk office).</li>
+                <li><strong className="text-white">AS/NZS 2293.1 &amp; 2293.2</strong> — emergency and exit lighting design, installation, and 6-monthly discharge testing.</li>
+                <li><strong className="text-white">QLD Electrical Safety Regulation 2013</strong> — RCD testing every 6 months (push-button) and 12 months (operational). Records kept 5 years.</li>
+                <li><strong className="text-white">QLD Building Fire Safety Regulation 2008</strong> — emergency lighting log book requirements.</li>
+                <li><strong className="text-white">Workplace Health &amp; Safety Queensland</strong> — workplace electrical safety duty of care.</li>
+              </ul>
+            </div>
+            <div className="bg-surface-card border border-border rounded-xl p-8">
+              <p className="text-xs font-bold text-neon uppercase tracking-[2px] mb-4">
+                What Affects Your Quote
+              </p>
+              <h3 className="text-2xl font-bold mb-4">How we price commercial work</h3>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Every job is quoted fixed-price after a site visit. We don&apos;t publish rate cards — the same brief on two different tenancies often needs meaningfully different scope. The variables that shape your quote:
+              </p>
+              <div className="space-y-4 text-sm">
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Scope &amp; scale</p>
+                  <p className="text-text-secondary text-xs">Floor area, circuit count, number of fittings, specialist systems (access control, CCTV, UPS, dynamic lighting).</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Trading-hours coordination</p>
+                  <p className="text-text-secondary text-xs">Work completed outside business hours carries an after-hours loading — quoted transparently up front.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Compliance inclusions</p>
+                  <p className="text-text-secondary text-xs">RCD testing, emergency lighting testing, test-and-tag registers, Certificate of Electrical Safety, scheduled program setup.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Landlord / building-manager coordination</p>
+                  <p className="text-text-secondary text-xs">Multi-tenancy access, isolation planning, records filed with building management.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Materials &amp; brand spec</p>
+                  <p className="text-text-secondary text-xs">Quality of fittings, specified brands (client- or designer-nominated), long-lead items.</p>
+                </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-border">
+                <a href="tel:0739149696" className="text-neon font-bold text-sm">
+                  Call 07 3914 9696 for a fixed-price quote →
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -64,6 +64,61 @@ const industrialServices = [
   "Testing & compliance certification",
 ];
 
+const applicationsServed = [
+  {
+    title: "Manufacturing & Production",
+    desc: "3-phase machinery connections, motor starters, variable speed drives, production line wiring, conveyor controls, emergency stop integration.",
+  },
+  {
+    title: "Warehouses & Distribution",
+    desc: "High-bay LED lighting, loading dock power, roller door controls, CCTV and security integration, forklift charging circuits.",
+  },
+  {
+    title: "Workshops — Auto, Fabrication, Timber",
+    desc: "Workshop lighting at correct lux levels, 3-phase welder and compressor supply, overhead hoist wiring, dedicated dust extraction circuits.",
+  },
+  {
+    title: "Commercial Kitchens & Laundries",
+    desc: "Industrial-grade commercial kitchen power, dishwasher and glasswasher circuits, extraction fans, laundry equipment, exhaust systems.",
+  },
+  {
+    title: "Agricultural & Rural Sheds",
+    desc: "Pump and irrigation supply, large-shed lighting, 3-phase for feed and grain handling equipment, rural-grade surge protection.",
+  },
+  {
+    title: "Industrial Maintenance Programs",
+    desc: "Scheduled preventative maintenance, thermal imaging of switchboards, RCD testing, emergency stop verification, compliance paperwork.",
+  },
+];
+
+const processSteps = [
+  {
+    step: "01",
+    title: "Site survey & load analysis",
+    desc: "Licensed electrician attends site to document existing supply, switchboards, and machinery. Load profile calculated against existing infrastructure to identify bottlenecks or compliance gaps.",
+  },
+  {
+    step: "02",
+    title: "3-phase supply assessment with Energex",
+    desc: "For supply upgrades we coordinate with Energex — supply capacity check, connection policy review, temporary disconnection scheduling, meter configuration.",
+  },
+  {
+    step: "03",
+    title: "Scoped fixed-price quote",
+    desc: "Detailed quote covering machinery wiring, distribution boards, emergency stops, compliance testing. Every line item clearly described.",
+  },
+  {
+    step: "04",
+    title: "Installation around production windows",
+    desc: "Most industrial work is completed outside production hours — evenings, weekends, planned shutdowns. We plan isolation carefully so nothing unintended gets de-energised.",
+  },
+  {
+    step: "05",
+    title: "Commissioning & compliance certification",
+    desc: "Every new circuit tested. Emergency stops verified. Arc-flash and machinery-safety documentation delivered. Certificate of Electrical Safety for any regulated work.",
+  },
+];
+
 export default function IndustrialPage() {
   return (
     <>
@@ -173,6 +228,126 @@ export default function IndustrialPage() {
               <p className="text-text-secondary text-sm leading-relaxed">
                 We also offer scheduled preventative maintenance programs designed to catch faults before they cause costly breakdowns or safety incidents. Prevention is always more cost-effective than repair.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Applications */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">
+              Where We Work
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Industrial environments we service
+            </h2>
+            <p className="text-text-secondary">
+              Industrial electrical work shares a common language — 3-phase, machinery, compliance — but the specifics change with the environment. Six of the patterns we see most across Brisbane&apos;s industrial corridors.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {applicationsServed.map((a) => (
+              <div
+                key={a.title}
+                className="card-hover bg-surface-card border border-border rounded-lg p-8"
+              >
+                <h3 className="text-lg font-bold mb-3">{a.title}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">{a.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-24 bg-surface">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">
+              What to Expect
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold">
+              How an industrial job runs
+            </h2>
+          </div>
+          <div className="space-y-5">
+            {processSteps.map((s) => (
+              <div
+                key={s.step}
+                className="flex gap-6 items-start bg-surface-card border border-border rounded-lg p-6"
+              >
+                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-neon-glow border border-neon/30 flex items-center justify-center">
+                  <span className="text-neon font-bold text-sm tracking-wider">{s.step}</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold mb-2">{s.title}</h3>
+                  <p className="text-text-secondary text-sm leading-relaxed">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance & Costs */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="bg-surface-card border border-border rounded-xl p-8">
+              <p className="text-xs font-bold text-neon uppercase tracking-[2px] mb-4">
+                Compliance & Standards
+              </p>
+              <h3 className="text-2xl font-bold mb-4">Regulations we work to</h3>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Industrial electrical work in Queensland is governed by multiple overlapping standards. The core set:
+              </p>
+              <ul className="space-y-3 text-sm text-text-secondary">
+                <li><strong className="text-white">AS/NZS 3000:2018</strong> — Wiring Rules, the foundation of every installation.</li>
+                <li><strong className="text-white">AS/NZS 3012</strong> — construction and demolition site electrical installations.</li>
+                <li><strong className="text-white">AS/NZS 4024</strong> — machinery safety, guards, interlocks.</li>
+                <li><strong className="text-white">AS/NZS 62061</strong> — functional safety of electrical control systems.</li>
+                <li><strong className="text-white">AS/NZS 3008</strong> — cable sizing and voltage-drop calculations.</li>
+                <li><strong className="text-white">Workplace Health & Safety Queensland</strong> — machinery risk assessment, arc-flash management, lockout-tagout procedures.</li>
+                <li><strong className="text-white">QLD Electrical Safety Regulation 2013</strong> — RCD testing, hostile environment testing intervals, licensed work.</li>
+              </ul>
+            </div>
+            <div className="bg-surface-card border border-border rounded-xl p-8">
+              <p className="text-xs font-bold text-neon uppercase tracking-[2px] mb-4">
+                What Affects Your Quote
+              </p>
+              <h3 className="text-2xl font-bold mb-4">How we price industrial work</h3>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Every industrial job is quoted fixed-price after a site visit. Rate cards don&apos;t work in industrial — the scope is too variable. The drivers of your quote:
+              </p>
+              <div className="space-y-4 text-sm">
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Supply &amp; distribution scope</p>
+                  <p className="text-text-secondary text-xs">3-phase upgrade, Energex coordination, main and sub-board capacity, load balancing.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Machinery wiring</p>
+                  <p className="text-text-secondary text-xs">Number of machines, phase configuration, motor control and variable-speed-drive requirements.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Safety systems</p>
+                  <p className="text-text-secondary text-xs">Emergency stops, arc-flash assessment, machinery guarding integration per AS/NZS 4024.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Out-of-hours access</p>
+                  <p className="text-text-secondary text-xs">Most industrial work is completed outside production hours — quoted transparently up front.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Compliance &amp; ongoing maintenance</p>
+                  <p className="text-text-secondary text-xs">Initial compliance audit, RCD and emergency stop testing programs, thermal imaging.</p>
+                </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-border">
+                <a href="tel:0739149696" className="text-neon font-bold text-sm">
+                  Call 07 3914 9696 for a fixed-price quote →
+                </a>
+              </div>
             </div>
           </div>
         </div>

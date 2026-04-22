@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
 import { projects } from "@/data/projects";
+import { blogPosts } from "@/data/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -22,6 +23,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.url}/blog`, changeFrequency: "weekly", priority: 0.6, lastModified: now },
     { url: `${SITE.url}/specials`, changeFrequency: "monthly", priority: 0.7, lastModified: now },
     { url: `${SITE.url}/contact`, changeFrequency: "yearly", priority: 0.8, lastModified: now },
+    { url: `${SITE.url}/service-areas`, changeFrequency: "monthly", priority: 0.75, lastModified: now },
+    { url: `${SITE.url}/service-areas/yeerongpilly`, changeFrequency: "monthly", priority: 0.85, lastModified: now },
+    { url: `${SITE.url}/service-areas/paddington`, changeFrequency: "monthly", priority: 0.85, lastModified: now },
+    { url: `${SITE.url}/service-areas/fortitude-valley`, changeFrequency: "monthly", priority: 0.85, lastModified: now },
+    { url: `${SITE.url}/service-areas/wilston`, changeFrequency: "monthly", priority: 0.85, lastModified: now },
+    { url: `${SITE.url}/service-areas/bulimba`, changeFrequency: "monthly", priority: 0.85, lastModified: now },
+    { url: `${SITE.url}/service-areas/teneriffe`, changeFrequency: "monthly", priority: 0.85, lastModified: now },
+    { url: `${SITE.url}/service-areas/hamilton`, changeFrequency: "monthly", priority: 0.85, lastModified: now },
+    { url: `${SITE.url}/service-areas/west-end`, changeFrequency: "monthly", priority: 0.85, lastModified: now },
+    { url: `${SITE.url}/service-areas/helensvale`, changeFrequency: "monthly", priority: 0.85, lastModified: now },
+    { url: `${SITE.url}/service-areas/bundall`, changeFrequency: "monthly", priority: 0.85, lastModified: now },
   ];
 
   const projectPages: MetadataRoute.Sitemap = projects.map((p) => ({
@@ -31,5 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
   }));
 
-  return [...pages, ...projectPages];
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
+    url: `${SITE.url}/blog/${p.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.75,
+    lastModified: p.updated ? new Date(p.updated) : now,
+  }));
+
+  return [...pages, ...projectPages, ...blogPages];
 }

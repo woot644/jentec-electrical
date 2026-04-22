@@ -57,6 +57,61 @@ const architectPartners = [
   { name: "KO&Co Architecture", desc: "Working together on architecturally designed homes that push creative boundaries." },
 ];
 
+const applicationsServed = [
+  {
+    title: "Queenslander Rewires",
+    desc: "Pre-1990 TPS, VIR, and knob-and-tube replacement. Staged room-by-room so you stay in the home. Original pendants, pressed metal, and stained glass preserved.",
+  },
+  {
+    title: "New Builds & Extensions",
+    desc: "Full electrical from rough-in to commissioning. 3-phase supply coordination with Energex, distribution board sized for future growth (solar, EV, A/C).",
+  },
+  {
+    title: "Full Home Renovations",
+    desc: "Architect-led rewires integrated with the broader renovation program. Coordination with builder, joiner, interior designer, lighting designer.",
+  },
+  {
+    title: "Luxury Lighting Design",
+    desc: "Layered schemes — task, accent, ambient, feature. Dimmer circuits, LED strip integration, pendant restoration, landscape and pool-zone lighting.",
+  },
+  {
+    title: "Apartment Renovations",
+    desc: "Body corporate coordination, strata approvals, common-wall cable routing, tenant notification for any shared isolation. Kitchen, bathroom, and lighting upgrades.",
+  },
+  {
+    title: "Pre-Purchase Inspections",
+    desc: "Thorough safety inspection before you commit. Board condition, wiring age, RCD coverage, earthing and bonding. Clear report with costed remediation.",
+  },
+];
+
+const processSteps = [
+  {
+    step: "01",
+    title: "Design consultation",
+    desc: "On-site walk-through with you (and your architect or builder where relevant). We scope lighting, power, switchboard capacity, future-proofing for EV and solar, and any heritage or overlay constraints.",
+  },
+  {
+    step: "02",
+    title: "Scoped fixed-price quote",
+    desc: "Detailed quote within 3–5 business days. Every circuit, fitting, and stage described clearly. No lump-sum vagueness. Payment milestones agreed up front.",
+  },
+  {
+    step: "03",
+    title: "Rough-in coordinated with trades",
+    desc: "For renovations and new builds, we rough-in once the frame is up — before gyprock. We coordinate with plumber, HVAC, and builder so cable routes don't collide. Photographs taken of every wall cavity for reference.",
+  },
+  {
+    step: "04",
+    title: "Fit-off & commissioning",
+    desc: "Once walls are lined, we install switches, GPOs, pendants, downlights, smart controls. Every circuit is tested and energised one at a time with full documentation.",
+  },
+  {
+    step: "05",
+    title: "Certificate & handover",
+    desc: "Certificate of Electrical Safety issued for all regulated work. One-page guide to your new installation — circuits labelled, smart home set up, any scheduled maintenance calendared.",
+  },
+];
+
 export default function ResidentialPage() {
   return (
     <>
@@ -175,6 +230,124 @@ export default function ResidentialPage() {
                     <p className="text-sm text-text-secondary">{stat.label}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Applications */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">
+              What We Do
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Residential scope we cover
+            </h2>
+            <p className="text-text-secondary">
+              Every residential job is different — but after hundreds of Brisbane homes, the work falls into six repeatable patterns. Here&apos;s what each looks like.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {applicationsServed.map((a) => (
+              <div
+                key={a.title}
+                className="card-hover bg-surface-card border border-border rounded-lg p-8"
+              >
+                <h3 className="text-lg font-bold mb-3">{a.title}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">{a.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-24 bg-surface">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">
+              What to Expect
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold">
+              How a residential project runs with Jentech
+            </h2>
+          </div>
+          <div className="space-y-5">
+            {processSteps.map((s) => (
+              <div
+                key={s.step}
+                className="flex gap-6 items-start bg-surface-card border border-border rounded-lg p-6"
+              >
+                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-neon-glow border border-neon/30 flex items-center justify-center">
+                  <span className="text-neon font-bold text-sm tracking-wider">{s.step}</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold mb-2">{s.title}</h3>
+                  <p className="text-text-secondary text-sm leading-relaxed">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance & Costs */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="bg-surface-card border border-border rounded-xl p-8">
+              <p className="text-xs font-bold text-neon uppercase tracking-[2px] mb-4">
+                Compliance & Standards
+              </p>
+              <h3 className="text-2xl font-bold mb-4">The regulations that apply to your home</h3>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Residential electrical work in Queensland is regulated by several overlapping instruments. The ones that most often affect renovation or rewire work:
+              </p>
+              <ul className="space-y-3 text-sm text-text-secondary">
+                <li><strong className="text-white">AS/NZS 3000:2018</strong> — the Wiring Rules. Any new circuit must comply, which means RCD protection and modern switchboard integration.</li>
+                <li><strong className="text-white">QLD Fire and Emergency Services Act 1990</strong> — smoke alarms in every bedroom, interconnected, photoelectric. 2027 deadline for all owner-occupied homes.</li>
+                <li><strong className="text-white">AS 3786:2014</strong> — smoke alarm product standard. Only photoelectric allowed (ionisation banned since 2022).</li>
+                <li><strong className="text-white">QLD Electrical Safety Regulation 2013</strong> — licensed work only, Certificate of Electrical Safety required.</li>
+                <li><strong className="text-white">Energex Connection Policy</strong> — applies to any service upgrade, meter change, or relocation. We handle the paperwork.</li>
+              </ul>
+            </div>
+            <div className="bg-surface-card border border-border rounded-xl p-8">
+              <p className="text-xs font-bold text-neon uppercase tracking-[2px] mb-4">
+                What Affects Your Quote
+              </p>
+              <h3 className="text-2xl font-bold mb-4">How we price residential work</h3>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Every job is quoted fixed-price after a site visit. We don&apos;t publish rate cards — no two homes are the same. The variables that shape your quote:
+              </p>
+              <div className="space-y-4 text-sm">
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Scope of work</p>
+                  <p className="text-text-secondary text-xs">Full rewire vs partial, circuit count, room-by-room staging, switchboard replacement.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Home age &amp; construction</p>
+                  <p className="text-text-secondary text-xs">Queenslander vs post-war vs modern infill affects cable routing, access, and heritage considerations.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Heritage or overlay constraints</p>
+                  <p className="text-text-secondary text-xs">Character Protection zones (Paddington, West End) affect meter placement and exterior hardware.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Supply &amp; infrastructure</p>
+                  <p className="text-text-secondary text-xs">Energex coordination, single-phase to 3-phase upgrade, meter relocation.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Fittings &amp; brand spec</p>
+                  <p className="text-text-secondary text-xs">Standard LED vs designer pendants, smart controls, landscape lighting.</p>
+                </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-border">
+                <a href="tel:0739149696" className="text-neon font-bold text-sm">
+                  Call 07 3914 9696 for a fixed-price quote →
+                </a>
               </div>
             </div>
           </div>

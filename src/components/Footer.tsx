@@ -24,6 +24,19 @@ const guides = [
   { name: "No Hot Water", href: "/guides/no-hot-water" },
 ];
 
+const serviceAreas = [
+  { name: "Yeerongpilly", href: "/service-areas/yeerongpilly" },
+  { name: "Paddington", href: "/service-areas/paddington" },
+  { name: "Fortitude Valley", href: "/service-areas/fortitude-valley" },
+  { name: "Wilston", href: "/service-areas/wilston" },
+  { name: "Bulimba", href: "/service-areas/bulimba" },
+  { name: "Teneriffe", href: "/service-areas/teneriffe" },
+  { name: "Hamilton", href: "/service-areas/hamilton" },
+  { name: "West End", href: "/service-areas/west-end" },
+  { name: "Helensvale", href: "/service-areas/helensvale" },
+  { name: "Bundall", href: "/service-areas/bundall" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-surface border-t border-border">
@@ -136,6 +149,35 @@ export default function Footer() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Service Areas */}
+      <div className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-6">
+            <h3 className="text-xs font-bold text-neon uppercase tracking-[2px]">
+              Service Areas &mdash; Brisbane &amp; Gold Coast
+            </h3>
+            <Link
+              href="/service-areas"
+              className="text-xs text-text-secondary hover:text-neon transition-colors uppercase tracking-wider"
+            >
+              View all service areas &rarr;
+            </Link>
+          </div>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-6 gap-y-2">
+            {serviceAreas.map((a) => (
+              <li key={a.href}>
+                <Link
+                  href={a.href}
+                  className="text-sm text-text-secondary hover:text-neon transition-colors"
+                >
+                  Electrician {a.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 

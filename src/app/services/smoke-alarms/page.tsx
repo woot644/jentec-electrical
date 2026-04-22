@@ -59,6 +59,61 @@ const placements = [
   "If no bedrooms on a storey, at least one alarm per storey",
 ];
 
+const applicationsServed = [
+  {
+    title: "Owner-Occupied Homes",
+    desc: "QLD's 2027 deadline applies to you. Every bedroom needs an interconnected photoelectric alarm, plus hallways and storeys. Pre-compliance upgrades now avoid the 2026/2027 rush.",
+  },
+  {
+    title: "Rental Properties",
+    desc: "Already in force since 2022. Landlords are legally required to provide compliant alarms. We work with property managers to roll compliance across portfolios on schedule.",
+  },
+  {
+    title: "New Builds",
+    desc: "Compliance is built in from rough-in — interconnected hardwired alarms with 10-year sealed lithium backup batteries. No retrofit needed.",
+  },
+  {
+    title: "Renovations",
+    desc: "Any significant renovation triggers the compliance upgrade requirement. We include smoke alarm upgrade in the rewire or addition scope so the home is compliant at handover.",
+  },
+  {
+    title: "Commercial Properties",
+    desc: "Commercial smoke detection falls under different regulations (BCA, fire engineering) but we integrate with commercial systems, tenancy compliance, and base-building fire services.",
+  },
+  {
+    title: "Short-Stay Accommodation",
+    desc: "Airbnb, short-stay rentals, Bed & Breakfasts must meet the rental compliance standard. Property managers rely on us for scheduled annual inspections.",
+  },
+];
+
+const processSteps = [
+  {
+    step: "01",
+    title: "Home audit",
+    desc: "We walk the home counting bedrooms, storeys, and hallways. We note existing alarms (hardwired? battery-only? ionisation or photoelectric?). Takes 15–20 minutes.",
+  },
+  {
+    step: "02",
+    title: "Compliance package quote",
+    desc: "Written quote showing exactly what's needed — alarm count, locations, brand (Brooks, Clipsal, Emerald), and total price. Usually the same or next day after audit.",
+  },
+  {
+    step: "03",
+    title: "Installation",
+    desc: "Most 3-bedroom homes done in a single day. Hardwired with 10-year sealed lithium backup batteries. No cutting into ceilings where existing cabling can be reused.",
+  },
+  {
+    step: "04",
+    title: "Interconnection test",
+    desc: "Every alarm in the home sounds when one triggers. We trigger each alarm in turn and confirm the others respond — the critical part of QLD's 2027 requirement.",
+  },
+  {
+    step: "05",
+    title: "Certification & report",
+    desc: "Written compliance report — useful for owner records, required for rental property files. Includes alarm locations, serial numbers, test results, and 10-year expiry dates.",
+  },
+];
+
 export default function SmokeAlarmsPage() {
   return (
     <>
@@ -181,6 +236,125 @@ export default function SmokeAlarmsPage() {
                     <span className="text-sm text-text-secondary">{req.value}</span>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Applications */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">
+              Who Needs Compliance
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Smoke alarm compliance by property type
+            </h2>
+            <p className="text-text-secondary">
+              Queensland&apos;s smoke alarm rules apply differently depending on how the property is used. Six common situations and what compliance means for each.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {applicationsServed.map((a) => (
+              <div
+                key={a.title}
+                className="card-hover bg-surface-card border border-border rounded-lg p-8"
+              >
+                <h3 className="text-lg font-bold mb-3">{a.title}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">{a.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-24 bg-surface">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">
+              What to Expect
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold">
+              From audit to certified, in one day
+            </h2>
+          </div>
+          <div className="space-y-5">
+            {processSteps.map((s) => (
+              <div
+                key={s.step}
+                className="flex gap-6 items-start bg-surface-card border border-border rounded-lg p-6"
+              >
+                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-neon-glow border border-neon/30 flex items-center justify-center">
+                  <span className="text-neon font-bold text-sm tracking-wider">{s.step}</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold mb-2">{s.title}</h3>
+                  <p className="text-text-secondary text-sm leading-relaxed">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance & Costs */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="bg-surface-card border border-border rounded-xl p-8">
+              <p className="text-xs font-bold text-neon uppercase tracking-[2px] mb-4">
+                Compliance & Standards
+              </p>
+              <h3 className="text-2xl font-bold mb-4">The 2027 deadline explained</h3>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Queensland has the strictest smoke alarm laws in Australia. The core instruments:
+              </p>
+              <ul className="space-y-3 text-sm text-text-secondary">
+                <li><strong className="text-white">QLD Fire and Emergency Services Act 1990</strong> — requires compliant alarms in every QLD dwelling.</li>
+                <li><strong className="text-white">QLD Building Fire Safety Regulation 2008</strong> — sets the compliance specifications.</li>
+                <li><strong className="text-white">AS 3786:2014</strong> — the product standard every compliant alarm must meet. Only photoelectric allowed in QLD — ionisation is banned.</li>
+                <li><strong className="text-white">2027 deadline (owner-occupied)</strong> — by 1 January 2027 every owner-occupied QLD home must have interconnected photoelectric alarms in every bedroom, hallway, and storey.</li>
+                <li><strong className="text-white">Rental standard (already in force)</strong> — tenanted properties have had this requirement since 2022.</li>
+                <li><strong className="text-white">Sale &amp; lease trigger</strong> — a property being sold or leased must be compliant at the point of transaction, regardless of the 2027 date.</li>
+              </ul>
+            </div>
+            <div className="bg-surface-card border border-border rounded-xl p-8">
+              <p className="text-xs font-bold text-neon uppercase tracking-[2px] mb-4">
+                What Affects Your Quote
+              </p>
+              <h3 className="text-2xl font-bold mb-4">How we price smoke alarm compliance</h3>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Every home is quoted fixed-price after a 15-minute audit. The variables that drive the price:
+              </p>
+              <div className="space-y-4 text-sm">
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Bedroom &amp; storey count</p>
+                  <p className="text-text-secondary text-xs">Every bedroom + every hallway connecting bedrooms + every storey needs a compliant alarm.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Existing alarm suitability</p>
+                  <p className="text-text-secondary text-xs">Whether any existing alarms already meet AS 3786 and can be retained vs full replacement needed.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Interconnection method</p>
+                  <p className="text-text-secondary text-xs">Hardwired (usually cheaper during renovation) vs wireless (easier retrofit into finished homes).</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Access &amp; cable routing</p>
+                  <p className="text-text-secondary text-xs">Ceiling access, heritage-feature considerations, whether existing cabling can be reused.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Rental or bulk-portfolio pricing</p>
+                  <p className="text-text-secondary text-xs">Property managers with multiple properties — volume quoted at a reduced per-property rate.</p>
+                </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-border">
+                <a href="tel:0739149696" className="text-neon font-bold text-sm">
+                  Call 07 3914 9696 for a fixed-price quote →
+                </a>
               </div>
             </div>
           </div>

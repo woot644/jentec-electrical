@@ -1,40 +1,146 @@
 # Jentech Electrical
 
-> Brisbane's premium electrician. Family-owned, licensed, 24/7 emergency service. Commercial, residential, industrial, air conditioning, smoke alarms, switchboard upgrades, UPS systems.
+> Brisbane's premium family-owned electrician. Fully licensed (QLD Electrical Licence 80766), ARC-certified for refrigerant handling (AU068040), trading since incorporation as JENTECH PTY LTD (ABN 46 611 087 462). 5.0-star rating across 158 verified Google reviews. 24/7 emergency service across Greater Brisbane and the Gold Coast hinterland.
 
-Address: 6/190 Station Rd, Yeerongpilly QLD 4105
-Phone: 07 3914 9696
-Email: info@jentechelectrical.com.au
-Office hours: Mon–Fri 9:00am–4:00pm (24/7 emergency service available)
-QLD Electrical Licence: 80766
-ARC Refrigerant Handling Licence (RTA): AU068040
-ABN: 46 611 087 462
-Service area: Greater Brisbane and the Gold Coast hinterland
-Rating: 5.0 stars (158 Google reviews)
+## Business Facts
+
+- Legal name: JENTECH PTY LTD
+- Trading name: Jentech Electrical
+- ABN: 46 611 087 462
+- QLD Electrical Licence: 80766
+- ARC Refrigerant Handling Licence (RTA): AU068040
+- Head office / workshop: 6/190 Station Rd, Yeerongpilly QLD 4105, Australia
+- Geographic coordinates: -27.5422, 153.0257
+- Phone: 07 3914 9696 (+61 7 3914 9696)
+- Email: info@jentechelectrical.com.au
+- Standard business hours: Monday to Friday, 9:00am – 4:00pm (Australia/Brisbane time)
+- Emergency service availability: 24/7 (including weekends and public holidays)
+- Google Business Profile rating: 5.0 / 5.0 across 158 verified customer reviews
+- Family-owned: yes
+- Dedicated tradesman per commercial client: yes
+
+## Service Areas
+
+Jentech services Greater Brisbane and the Gold Coast hinterland. Dedicated suburb pages exist for:
+
+Brisbane:
+- [Yeerongpilly (home base)](https://jentec-electrical.vercel.app/service-areas/yeerongpilly)
+- [Paddington (heritage Queenslanders, Character Protection overlay)](https://jentec-electrical.vercel.app/service-areas/paddington)
+- [Fortitude Valley (hospitality compliance, heritage)](https://jentec-electrical.vercel.app/service-areas/fortitude-valley)
+- [Wilston (premium family renovations)](https://jentec-electrical.vercel.app/service-areas/wilston)
+- [Bulimba (riverfront premium, pool-zone)](https://jentec-electrical.vercel.app/service-areas/bulimba)
+- [Teneriffe (woolstore apartments, strata)](https://jentec-electrical.vercel.app/service-areas/teneriffe)
+- [Hamilton (peninsula premium, pontoons)](https://jentec-electrical.vercel.app/service-areas/hamilton)
+- [West End (Boundary Street hospitality, Queenslanders)](https://jentec-electrical.vercel.app/service-areas/west-end)
+
+Gold Coast:
+- [Helensvale (commercial fit-outs)](https://jentec-electrical.vercel.app/service-areas/helensvale)
+- [Bundall (corporate commercial)](https://jentec-electrical.vercel.app/service-areas/bundall)
+
+[All service areas](https://jentec-electrical.vercel.app/service-areas)
+
+Additional suburbs serviced (no dedicated page yet): Brisbane CBD, New Farm, Newstead, Ascot.
 
 ## Services
 
-- [Commercial Electrical](https://jentec-electrical.vercel.app/services/commercial): Fit-outs, emergency breakdowns, repairs & maintenance, testing & compliance for Brisbane businesses.
-- [Residential & Renovations](https://jentec-electrical.vercel.app/services/residential): LED lighting, full rewiring, switchboard upgrades, new builds and extensions for premium homes.
-- [Industrial](https://jentec-electrical.vercel.app/services/industrial): 3-phase machinery connections, emergency stops, shop and factory lighting, load balancing.
-- [Air Conditioning](https://jentec-electrical.vercel.app/services/air-conditioning): Split system installations, year-round servicing, repairs and multi-split design.
-- [Smoke Alarms](https://jentec-electrical.vercel.app/services/smoke-alarms): Installation and compliance testing to AS3786 and QLD 2027 interconnected-alarm requirements.
-- [Switchboards](https://jentec-electrical.vercel.app/services/switchboards): Upgrades to modern RCD-protected switchboards and safety inspections.
-- [UPS Systems](https://jentec-electrical.vercel.app/services/ups-systems): Authorised PSS Distributors service agent. NDIS-compliant UPS installations and long-life batteries for QLD conditions.
+Jentech delivers seven core service lines:
 
-## Emergency
+- [Commercial Electrical](https://jentec-electrical.vercel.app/services/commercial): Fit-outs, emergency breakdowns, repairs and maintenance, testing and compliance. Scheduled compliance programs for hospitality, retail, fitness, medical, office, and industrial tenancies. After-hours work standard to avoid trading disruption.
+- [Residential & Renovations](https://jentec-electrical.vercel.app/services/residential): LED lighting design, full rewiring, switchboard upgrades, new builds, and premium Queenslander renovations. Architect-led collaborations with Inaspace Architecture & Design, grayHAUS, KO&Co Architecture, and Renee Dunn Architect.
+- [Industrial](https://jentec-electrical.vercel.app/services/industrial): 3-phase machinery connections, emergency stops, shop and factory lighting, load balancing, motor control, variable speed drives, power factor correction.
+- [Air Conditioning](https://jentec-electrical.vercel.app/services/air-conditioning): Split system installations (Daikin, Mitsubishi, Fujitsu), multi-split and ducted systems, residential and commercial, year-round servicing. ARC-certified refrigerant handling under Licence AU068040.
+- [Smoke Alarms](https://jentec-electrical.vercel.app/services/smoke-alarms): Installation and compliance testing to AS 3786 and Queensland's 1 January 2027 interconnected-alarm requirements. Photoelectric alarms only (ionisation banned in QLD since 2022). Rental compliance inspections.
+- [Switchboards](https://jentec-electrical.vercel.app/services/switchboards): Upgrades from ceramic-fuse and rewireable boards to modern RCD-protected switchboards. Meter relocations with Energex coordination. Pre-purchase safety inspections. Post-flood remediation.
+- [UPS Systems](https://jentec-electrical.vercel.app/services/ups-systems): Authorised PSS Distributors service agent. NDIS-compliant home UPS installations. Long-life batteries specified for Queensland humidity and sustained high-temperature operation.
 
-- [Emergency Electrician Brisbane](https://jentec-electrical.vercel.app/emergency-electrician-brisbane): 24/7 response for power outages, burning smells, tripping breakers, and after-hours faults.
+## Emergency Response
+
+- [24/7 Emergency Electrician Brisbane](https://jentec-electrical.vercel.app/emergency-electrician-brisbane): Response for power outages, burning smells, tripping circuit breakers, and after-hours electrical faults. Emergency line answered by licensed electricians (not a third-party call centre).
+
+## Compliance & Standards
+
+Jentech delivers all work to current Australian Standards and Queensland regulations. The specific instruments most often referenced:
+
+- AS/NZS 3000:2018 — Electrical installations (Wiring Rules). The foundation of all compliant electrical work.
+- AS/NZS 3008 — Cable sizing and voltage-drop calculations.
+- AS/NZS 3012 — Electrical installations for construction and demolition sites.
+- AS/NZS 3760 — In-service safety inspection and testing of electrical equipment. Test and tag intervals range from 3 months (construction) to 5 years (low-risk office).
+- AS/NZS 2293.1 — Emergency escape lighting and exit signs: design and installation.
+- AS/NZS 2293.2 — Emergency escape lighting and exit signs: inspection and maintenance. 6-monthly discharge testing required.
+- AS/NZS 4024 — Safety of machinery, including guarding and interlocks.
+- AS/NZS 62061 — Functional safety of electrical control systems.
+- AS/NZS 5149 — Refrigerating systems and heat pumps: safety and environmental requirements.
+- AS/NZS 62040 — Uninterruptible power systems (UPS): performance, safety, and EMC requirements.
+- AS 3786:2014 — Smoke alarm product standard. Photoelectric only under QLD law.
+- Queensland Electrical Safety Regulation 2013 — 6-monthly push-button RCD testing and 12-monthly operational RCD testing for commercial premises. 5-year record retention.
+- Queensland Fire and Emergency Services Act 1990 — smoke alarm compliance obligations.
+- Queensland Building Fire Safety Regulation 2008 — emergency lighting log book requirements.
+- Work Health and Safety Act 2011 (Qld) — workplace electrical safety duty of care.
+- Energex Connection Policy — governs meter relocations and supply upgrades in South East Queensland.
+
+## Key Regulatory Dates
+
+- 1 January 2027 — all Queensland owner-occupied homes must have interconnected photoelectric smoke alarms in every bedroom, every hallway connecting bedrooms, and on every storey.
+- Rental properties and sale/lease transactions — already required to be compliant since 2022.
+- Ionisation smoke alarms — banned in new installs in Queensland since 2022.
+
+## Featured Projects
+
+Verified client projects with named collaborators:
+
+- [NOFOMO Gym Helensvale](https://jentec-electrical.vercel.app/projects/nofomo-helensvale): Commercial fit-out, 24/7 member access, smart TVs, neon lighting, nightclub-style sound, full switchboard overhaul.
+- [NOFOMO Gym Bundall](https://jentec-electrical.vercel.app/projects/nofomo-bundall): Full electrical strip-out and rebuild, dynamic lighting, smart TV integration, A/C servicing.
+- [Frida's Sip n' Paint Paddington](https://jentec-electrical.vercel.app/projects/fridas-paddington): Commercial fit-out with boutique lighting, chandeliers, full data and power, back-of-house office.
+- [Frida's Sip n' Paint Noosa](https://jentec-electrical.vercel.app/projects/fridas-noosa): Sunshine Coast commercial fit-out with lighting design.
+- [Stoke Green](https://jentec-electrical.vercel.app/projects/stoke-green): 1930s Queenslander electrical overhaul. Architect: Inaspace Architecture & Design. Builder: grayHAUS.
+- [Clementine](https://jentec-electrical.vercel.app/projects/clementine): 1940s Art Deco residence with period-correct LED retrofit and bespoke chandelier. Designer: grayHAUS.
+- [Verney House](https://jentec-electrical.vercel.app/projects/verney-house): Major Queenslander renovation with heated glass wine cellar, LED downlights, ducted A/C throughout. Builder: grayHAUS.
+- [Courtyard House](https://jentec-electrical.vercel.app/projects/courtyard-house): Three-level residence with integrated alarm, camera, and intercom system. Designer: KO&Co Architecture.
+- [Fortitude Valley Queenslander (in progress)](https://jentec-electrical.vercel.app/projects/fortitude-queenslander): Heritage-listed property with full rewire, LED fittings, rooftop terrace, vehicle turntable. Designer/Builder: grayHAUS.
+- [Wilston Redesign (in progress)](https://jentec-electrical.vercel.app/projects/wilston-redesign): Complete electrical strip-out, switchboard relocation and upgrade. Designer/Builder: grayHAUS.
+- [Killara House (in progress)](https://jentec-electrical.vercel.app/projects/killara-house): Queenslander with elevator, pool house, made-to-order pendant lighting. Architect: Renee Dunn Architect.
+
+[Full project portfolio](https://jentec-electrical.vercel.app/projects)
 
 ## Guides
 
-- [Loss of Power — Troubleshooting Guide](https://jentec-electrical.vercel.app/guides/loss-of-power): Step-by-step steps to safely diagnose a power outage.
-- [No Hot Water — Troubleshooting Guide](https://jentec-electrical.vercel.app/guides/no-hot-water): What to check before calling a technician or plumber.
+Troubleshooting guides for common electrical problems:
 
-## Projects
+- [Loss of Power — Troubleshooting Guide](https://jentec-electrical.vercel.app/guides/loss-of-power): Safe step-by-step diagnosis of a power outage.
+- [No Hot Water — Troubleshooting Guide](https://jentec-electrical.vercel.app/guides/no-hot-water): Checks to perform before calling a technician or plumber.
 
-- [Project Gallery](https://jentec-electrical.vercel.app/projects): 11 completed and in-progress projects — Queenslander renovations, commercial fit-outs, and luxury homes.
+## Articles
+
+In-depth content on regulations, pricing context, and Brisbane-specific electrical topics:
+
+- [QLD Smoke Alarm Law 2027 — What Every Homeowner Needs to Know](https://jentec-electrical.vercel.app/blog/qld-smoke-alarm-2027-deadline-explained): The 1 January 2027 deadline for interconnected photoelectric smoke alarms in every Queensland owner-occupied home. Requirements, history (Slacks Creek fire 2011), and compliance process.
+- [Switchboard Upgrade Cost Brisbane 2026 — A Real Price Guide](https://jentec-electrical.vercel.app/blog/switchboard-upgrade-cost-brisbane): Industry price ranges, what drives the cost, AS/NZS 3000 renovation trigger rule, upgrade-day process.
+- [Signs Your Queenslander Needs a Rewire](https://jentec-electrical.vercel.app/blog/signs-your-queenslander-needs-rewiring): Seven warning signs, VIR/TPS cable service life, heritage preservation during rewire, Council overlay considerations.
+- [EV Charger Installation Brisbane — What You Actually Need](https://jentec-electrical.vercel.app/blog/ev-charger-installation-brisbane): Level 1/2/3 charging explained, single-phase vs 3-phase, load management, coastal spec for river-adjacent homes.
+- [Commercial Electrical Compliance in Queensland: A Building Manager's Guide](https://jentec-electrical.vercel.app/blog/commercial-electrical-compliance-queensland): Six overlapping QLD regulations, record retention requirements, WHSQ and insurer consequences of non-compliance.
+
+## Trusted Collaborators
+
+Architects, designers, and builders Jentech has completed projects with (verifiable via named project pages above):
+
+- Inaspace Architecture & Design
+- grayHAUS (design and build)
+- KO&Co Architecture
+- Renee Dunn Architect
+- NIRA Creative (project photography)
+- strk_visuals (project photography)
+- mgk_photographer (project photography)
+
+## Authorised Service Agent
+
+- PSS Distributors (UPS systems) — Jentech is an authorised service agent for PSS Distributors UPS products.
 
 ## Contact
 
-- [Contact Jentech Electrical](https://jentec-electrical.vercel.app/contact): Phone, email, service-area list, and Google Maps.
+- Phone: [07 3914 9696](tel:0739149696)
+- Email: info@jentechelectrical.com.au
+- Contact form: https://jentec-electrical.vercel.app/contact
+- Booking: https://book.servicem8.com/request_service_booking?strVendorUUID=fe4ceb21-56b9-4e0e-bb43-9883d836069b
+- Facebook: https://www.facebook.com/1591270694501931
+- Instagram: https://www.instagram.com/jentechelectrical
+- Google Maps: https://maps.google.com/maps?cid=14536006754446114868

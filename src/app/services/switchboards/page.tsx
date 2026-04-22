@@ -63,6 +63,61 @@ const warningSignItems = [
   "Adding new appliances causes circuits to overload",
 ];
 
+const applicationsServed = [
+  {
+    title: "Residential Upgrades",
+    desc: "Ceramic-fuse, rewireable, and pre-1990 boards replaced with modern RCD-protected units. Single-day job with power restored before dark.",
+  },
+  {
+    title: "Commercial Distribution Boards",
+    desc: "Office, retail, hospitality, fitness venue upgrades. Correct phase balancing, surge protection, after-hours work to avoid trading disruption.",
+  },
+  {
+    title: "Industrial Switchboards",
+    desc: "Workshop and manufacturing distribution. 3-phase main boards, motor starter panels, emergency stop integration, variable speed drive feeds.",
+  },
+  {
+    title: "Pre-Purchase Safety Inspections",
+    desc: "Before you commit to a character home: switchboard age, wiring condition, RCD coverage, bonding and earthing, remediation cost estimate.",
+  },
+  {
+    title: "Post-Flood Remediation",
+    desc: "Water-damaged boards replaced and the entire installation re-certified for Energex reconnection. Flood-affected Brisbane homes a specialty.",
+  },
+  {
+    title: "Meter Relocations",
+    desc: "Coordinated with Energex — temporary disconnection, new meter panel preparation, meter transfer, reconnection. Usually 1–2 site visits.",
+  },
+];
+
+const processSteps = [
+  {
+    step: "01",
+    title: "Site visit & board assessment",
+    desc: "On-site inspection of existing board — age, capacity, RCD coverage, circuit labelling, compliance gaps. Photos taken for the quote package.",
+  },
+  {
+    step: "02",
+    title: "Energex coordination",
+    desc: "For any supply-side work (meter change, relocation, supply upgrade) we lodge the Energex application and schedule the temporary disconnection window.",
+  },
+  {
+    step: "03",
+    title: "Installation day",
+    desc: "Power off for 2–4 hours typical. Old board removed, new board mounted, every circuit rewired to its labelled MCB, RCD-protected, and tested.",
+  },
+  {
+    step: "04",
+    title: "Testing & RCD commissioning",
+    desc: "Every circuit tested for correct earth-fault clearance. Each RCD push-button tested and operational trip-time verified. Results recorded.",
+  },
+  {
+    step: "05",
+    title: "Certificate of Electrical Safety",
+    desc: "Certificate issued and lodged with the QLD Electrical Safety Office. Copy emailed to you for your records, insurance, and future sale.",
+  },
+];
+
 export default function SwitchboardsPage() {
   return (
     <>
@@ -179,6 +234,125 @@ export default function SwitchboardsPage() {
                     <p className="text-xs text-text-secondary leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Applications */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">
+              Where We Work
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Switchboard work we deliver
+            </h2>
+            <p className="text-text-secondary">
+              Switchboard jobs fall into six repeatable patterns across Brisbane. Whichever applies to you, the approach is the same — safe, fast, certified.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {applicationsServed.map((a) => (
+              <div
+                key={a.title}
+                className="card-hover bg-surface-card border border-border rounded-lg p-8"
+              >
+                <h3 className="text-lg font-bold mb-3">{a.title}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">{a.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-24 bg-surface">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">
+              What to Expect
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold">
+              Most switchboard upgrades take a single day
+            </h2>
+          </div>
+          <div className="space-y-5">
+            {processSteps.map((s) => (
+              <div
+                key={s.step}
+                className="flex gap-6 items-start bg-surface-card border border-border rounded-lg p-6"
+              >
+                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-neon-glow border border-neon/30 flex items-center justify-center">
+                  <span className="text-neon font-bold text-sm tracking-wider">{s.step}</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold mb-2">{s.title}</h3>
+                  <p className="text-text-secondary text-sm leading-relaxed">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance & Costs */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="bg-surface-card border border-border rounded-xl p-8">
+              <p className="text-xs font-bold text-neon uppercase tracking-[2px] mb-4">
+                Compliance & Standards
+              </p>
+              <h3 className="text-2xl font-bold mb-4">Regulations that apply to your switchboard</h3>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Switchboard work is one of the most regulated areas of electrical installation. The key instruments:
+              </p>
+              <ul className="space-y-3 text-sm text-text-secondary">
+                <li><strong className="text-white">AS/NZS 3000:2018</strong> — Wiring Rules. Requires RCD protection on all new power and lighting circuits, modern overcurrent protection, and labelled distribution.</li>
+                <li><strong className="text-white">Renovation trigger rule</strong> — any new circuit added to a property must be RCD-protected. If the existing board can&apos;t provide this, an upgrade is triggered.</li>
+                <li><strong className="text-white">Ceramic fuse requirement</strong> — while not explicitly banned, ceramic-fuse boards cannot accept new circuits under AS/NZS 3000 and are treated as end-of-life.</li>
+                <li><strong className="text-white">QLD Electrical Safety Regulation 2013</strong> — licensed work only, Certificate of Electrical Safety required.</li>
+                <li><strong className="text-white">Energex Connection Policy</strong> — governs supply-side work, meter changes, and relocations.</li>
+                <li><strong className="text-white">Insurance implications</strong> — most insurers now require RCD-protected boards for full coverage. Older boards can invalidate claims.</li>
+              </ul>
+            </div>
+            <div className="bg-surface-card border border-border rounded-xl p-8">
+              <p className="text-xs font-bold text-neon uppercase tracking-[2px] mb-4">
+                What Affects Your Quote
+              </p>
+              <h3 className="text-2xl font-bold mb-4">How we price switchboard work</h3>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Every switchboard job is quoted fixed-price after a site visit. The variables that drive the price:
+              </p>
+              <div className="space-y-4 text-sm">
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Circuit count &amp; board size</p>
+                  <p className="text-text-secondary text-xs">Smaller older homes typically have fewer circuits; larger modern homes or commercial tenancies need bigger enclosures and higher-rated components.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Location &amp; access</p>
+                  <p className="text-text-secondary text-xs">Indoor laundry cupboard vs verandah-mounted (weatherproofing) vs heritage-overlay constraints affect scope.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Energex coordination</p>
+                  <p className="text-text-secondary text-xs">Straight board swap vs meter relocation vs 3-phase supply upgrade — each adds coordination scope.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Add-ons</p>
+                  <p className="text-text-secondary text-xs">Surge protection, spare-circuit provisioning for future EV/solar, whole-of-house earthing upgrade.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Certification &amp; inspection</p>
+                  <p className="text-text-secondary text-xs">Certificate of Electrical Safety is always included for any regulated work; pre-purchase inspection reports available as a separate scope.</p>
+                </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-border">
+                <a href="tel:0739149696" className="text-neon font-bold text-sm">
+                  Call 07 3914 9696 for a fixed-price quote →
+                </a>
               </div>
             </div>
           </div>

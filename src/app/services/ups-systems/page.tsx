@@ -61,6 +61,61 @@ const faqs = [
   },
 ];
 
+const applicationsServed = [
+  {
+    title: "Server Rooms & Data Cabinets",
+    desc: "Small rack UPS through to large enterprise units. Keep servers online through supply blips, voltage dips, and scheduled brown-outs. Clean shutdown via network card on longer outages.",
+  },
+  {
+    title: "Medical Practices",
+    desc: "Diagnostic imaging, consulting systems, patient records. Medical-grade isolation and UPS backup to meet practice continuity and compliance requirements.",
+  },
+  {
+    title: "24/7 Gyms & Venues",
+    desc: "Access control, CCTV, alarm systems. A 5-second outage shouldn't lock 300 members out of the gym at 5am. UPS bridges the gap.",
+  },
+  {
+    title: "Retail with EFTPOS",
+    desc: "Point-of-sale and payment systems. Five minutes of downtime on a busy trading day is real revenue loss — and often insurable via continuous-trading cover.",
+  },
+  {
+    title: "NDIS-Compliant Home UPS",
+    desc: "NDIS participants with life-support electrical equipment have specific supply continuity requirements. We install and certify home UPS systems that meet those obligations.",
+  },
+  {
+    title: "PSS Distributors Service Agent",
+    desc: "PSS Distributors is one of Australia's premier UPS brands — we're their authorised service agent. Warranty work, spare parts, battery replacements, commissioning.",
+  },
+];
+
+const processSteps = [
+  {
+    step: "01",
+    title: "Load assessment",
+    desc: "We document what needs to stay online through a power event — specific equipment, wattage draw, duty cycles. This becomes the UPS load specification.",
+  },
+  {
+    step: "02",
+    title: "Runtime calculation",
+    desc: "How long does the UPS need to run? 5 minutes (ride-through short blips), 15 minutes (orderly shutdown), 30+ minutes (extended outage bridging). This drives battery sizing.",
+  },
+  {
+    step: "03",
+    title: "Sizing & recommendation",
+    desc: "Fixed-price quote with a specific UPS model and battery configuration. We explain why it's the right choice and what the alternatives would give up.",
+  },
+  {
+    step: "04",
+    title: "Installation & commissioning",
+    desc: "Licensed electrical installation, UPS configured, batteries commissioned, network monitoring set up where requested. Load-test performed to verify runtime against spec.",
+  },
+  {
+    step: "05",
+    title: "Annual service calendared",
+    desc: "UPS batteries degrade over time. Annual service catches capacity loss, tests runtime against spec, cleans the unit, and replaces batteries at end-of-life (typically 3–5 years for lead-acid, 7–10 for lithium).",
+  },
+];
+
 export default function UPSSystemsPage() {
   return (
     <>
@@ -168,6 +223,125 @@ export default function UPSSystemsPage() {
               <Link href="/contact" className="neon-btn-outline px-6 py-3 rounded tracking-wider text-sm">
                 REQUEST A QUOTE
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Applications */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">
+              Where UPS Matters
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Who relies on UPS backup
+            </h2>
+            <p className="text-text-secondary">
+              UPS isn&apos;t for every tenancy — but where it&apos;s needed, it&apos;s critical. Six applications we deliver most often.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {applicationsServed.map((a) => (
+              <div
+                key={a.title}
+                className="card-hover bg-surface-card border border-border rounded-lg p-8"
+              >
+                <h3 className="text-lg font-bold mb-3">{a.title}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">{a.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-24 bg-surface">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-xs font-bold text-neon uppercase tracking-[3px] mb-4">
+              What to Expect
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold">
+              From load assessment to annual service
+            </h2>
+          </div>
+          <div className="space-y-5">
+            {processSteps.map((s) => (
+              <div
+                key={s.step}
+                className="flex gap-6 items-start bg-surface-card border border-border rounded-lg p-6"
+              >
+                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-neon-glow border border-neon/30 flex items-center justify-center">
+                  <span className="text-neon font-bold text-sm tracking-wider">{s.step}</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold mb-2">{s.title}</h3>
+                  <p className="text-text-secondary text-sm leading-relaxed">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance & Costs */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="bg-surface-card border border-border rounded-xl p-8">
+              <p className="text-xs font-bold text-neon uppercase tracking-[2px] mb-4">
+                Compliance & Standards
+              </p>
+              <h3 className="text-2xl font-bold mb-4">Standards that apply to UPS installations</h3>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                UPS installation sits at the intersection of electrical, battery safety, and (for medical/NDIS) continuity-of-care compliance:
+              </p>
+              <ul className="space-y-3 text-sm text-text-secondary">
+                <li><strong className="text-white">AS/NZS 62040</strong> — UPS performance, safety, and EMC requirements. The core product standard.</li>
+                <li><strong className="text-white">AS/NZS 3000:2018</strong> — electrical installation of the UPS, isolation, and downstream distribution.</li>
+                <li><strong className="text-white">Battery disposal regulations</strong> — end-of-life batteries (lead-acid and lithium) must be handled under AS/NZS 4681 and QLD Waste Reduction and Recycling regulations.</li>
+                <li><strong className="text-white">NDIS Practice Standards</strong> — participants with life-support electrical equipment have defined supply continuity requirements we can certify against.</li>
+                <li><strong className="text-white">Workplace Health & Safety Queensland</strong> — battery handling, ventilation for lead-acid battery rooms, arc-flash risk for larger systems.</li>
+                <li><strong className="text-white">Manufacturer warranty compliance</strong> — maintaining warranty typically requires annual servicing by an authorised agent.</li>
+              </ul>
+            </div>
+            <div className="bg-surface-card border border-border rounded-xl p-8">
+              <p className="text-xs font-bold text-neon uppercase tracking-[2px] mb-4">
+                What Affects Your Quote
+              </p>
+              <h3 className="text-2xl font-bold mb-4">How we price UPS systems</h3>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                UPS pricing varies enormously with load size, runtime, and brand. Every system is quoted after a load assessment. The variables that drive the price:
+              </p>
+              <div className="space-y-4 text-sm">
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Load capacity</p>
+                  <p className="text-text-secondary text-xs">Small rack UPS (1–3kVA) vs medium commercial (5–10kVA) vs large enterprise (20kVA+) — sized to the protected load.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Runtime requirement</p>
+                  <p className="text-text-secondary text-xs">Ride-through (5 minutes), orderly shutdown (15 minutes), extended outage bridging (30+ minutes) — drives battery sizing and unit choice.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Brand &amp; battery technology</p>
+                  <p className="text-text-secondary text-xs">PSS Distributors (our authorised service agency), APC, Eaton. Lead-acid vs lithium batteries — lithium higher upfront, longer service life.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Installation scope</p>
+                  <p className="text-text-secondary text-xs">Dedicated circuit from switchboard, isolation and bypass switching, network monitoring card, physical mounting.</p>
+                </div>
+                <div className="border-l-2 border-neon pl-4">
+                  <p className="font-bold text-white">Ongoing service</p>
+                  <p className="text-text-secondary text-xs">Annual service visit recommended — load test, battery health report, preventative battery replacement before end-of-life.</p>
+                </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-border">
+                <a href="tel:0739149696" className="text-neon font-bold text-sm">
+                  Call 07 3914 9696 for a fixed-price quote →
+                </a>
+              </div>
             </div>
           </div>
         </div>
