@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import FAQSection from "@/components/FAQ";
-import { JsonLd, breadcrumbSchema } from "@/lib/schema";
+import ExpertAttribution from "@/components/ExpertAttribution";
+import { JsonLd, breadcrumbSchema, personId } from "@/lib/schema";
 import { SITE } from "@/lib/site";
 import {
   blogPosts,
@@ -10,6 +11,7 @@ import {
   type BlogPost,
   type ContentBlock,
 } from "@/data/blog";
+import { getTeamMember } from "@/data/team";
 
 type Params = { slug: string };
 
@@ -49,6 +51,23 @@ export async function generateMetadata({
 
 function articleSchema(post: BlogPost) {
   const url = `${SITE.url}/blog/${post.slug}`;
+  // If a team member is named as reviewer, attribute as Person and
+  // reference the Person @id from /team — that lets crawlers connect
+  // the article back to the licensed expert and through to Jentech.
+  const reviewer = post.reviewedBy ? getTeamMember(post.reviewedBy) : undefined;
+  const author = reviewer
+    ? {
+        "@type": "Person" as const,
+        "@id": personId(reviewer.slug),
+        name: reviewer.name,
+        jobTitle: reviewer.role,
+        url: `${SITE.url}/team#${reviewer.slug}`,
+      }
+    : {
+        "@type": "Organization" as const,
+        name: post.author ?? SITE.name,
+        url: SITE.url,
+      };
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -58,11 +77,7 @@ function articleSchema(post: BlogPost) {
     image: post.coverImage ? `${SITE.url}${post.coverImage}` : undefined,
     datePublished: post.date,
     dateModified: post.updated ?? post.date,
-    author: {
-      "@type": "Organization",
-      name: post.author ?? SITE.name,
-      url: SITE.url,
-    },
+    author,
     publisher: {
       "@type": "Organization",
       name: SITE.name,
@@ -276,6 +291,11 @@ export default async function BlogPostPage({
       <article className="py-12">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <ContentRenderer blocks={post.sections} />
+          {post.reviewedBy ? (
+            <div className="mt-12 pt-8 border-t border-border">
+              <ExpertAttribution slug={post.reviewedBy} />
+            </div>
+          ) : null}
         </div>
       </article>
 

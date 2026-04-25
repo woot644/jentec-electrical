@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ServicePageHero from "@/components/ServicePageHero";
 import FAQSection from "@/components/FAQ";
+import ExpertAttribution from "@/components/ExpertAttribution";
 import { JsonLd, serviceSchema, breadcrumbSchema } from "@/lib/schema";
 import { SITE } from "@/lib/site";
 import { industrialFAQs } from "@/data/faqs";
@@ -350,6 +351,12 @@ export default function IndustrialPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-12">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ExpertAttribution slug="andrew" />
         </div>
       </section>
 

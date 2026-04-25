@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { featuredReviews } from "@/data/reviews";
+import { JsonLd, reviewSchema } from "@/lib/schema";
 
 const featuredProjects = [
   "nofomo-helensvale",
@@ -85,15 +87,21 @@ const services = [
   },
 ];
 
-const reviews = [
-  { name: "Rick Griffin", date: "March 2026", text: "Great service by Stephen in particular. On time, fast, efficient and very reasonably priced. Would highly recommend Jentech Electrical to anyone." },
-  { name: "Evannie Cris Guzman", date: "February 2026", text: "Professional, friendly, and reliable. Jett did an excellent job with our electrical work. Would not hesitate to use Jentech again." },
-  { name: "Vikki L Brown", date: "February 2026", text: "The tech that came out to see me today was awesome. He was professional, thorough and explained everything clearly. Highly recommend." },
-];
+// Mirror featuredReviews into the legacy `{name, date, text}` shape used
+// by the existing visual block — single source of truth lives in
+// data/reviews.ts and also feeds Review JSON-LD below.
+const reviews = featuredReviews.map((r) => ({
+  name: r.authorName,
+  date: r.displayDate ?? r.datePublished,
+  text: r.reviewBody,
+}));
 
 export default function Home() {
   return (
     <>
+      {featuredReviews.map((r, i) => (
+        <JsonLd key={i} data={reviewSchema(r)} />
+      ))}
       {/* HERO */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">

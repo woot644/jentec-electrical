@@ -164,6 +164,32 @@ export const personSchema = (opts: {
     : {}),
 });
 
+/**
+ * Individual customer review — emit one per featured review.
+ *
+ * Schema.org Review on a LocalBusiness signals real, attributed
+ * customer voice. Google can surface these as review snippets in
+ * search results when paired with the existing aggregateRating.
+ */
+export const reviewSchema = (opts: {
+  authorName: string;
+  rating: number;
+  reviewBody: string;
+  datePublished: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  itemReviewed: { "@id": `${SITE.url}/#business` },
+  author: { "@type": "Person", name: opts.authorName },
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: opts.rating,
+    bestRating: 5,
+  },
+  reviewBody: opts.reviewBody,
+  datePublished: opts.datePublished,
+});
+
 export const howToSchema = (opts: {
   name: string;
   description: string;

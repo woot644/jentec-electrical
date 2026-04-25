@@ -27,6 +27,8 @@ export type BlogPost = {
   relatedServiceSlugs?: string[];
   relatedSuburbSlugs?: string[];
   author?: string;
+  /** Team member slug — drives Person schema + on-page attribution. */
+  reviewedBy?: string;
 };
 
 export const blogPosts: BlogPost[] = [
@@ -49,6 +51,7 @@ export const blogPosts: BlogPost[] = [
       "Dark storm clouds rolling over a Brisbane residential street at dusk",
     readTime: 7,
     author: "Jentech Electrical",
+    reviewedBy: "andrew",
     sections: [
       {
         type: "p",
@@ -195,6 +198,7 @@ export const blogPosts: BlogPost[] = [
       "Electrical fire-risk scene illustrating the most common causes of house fires",
     readTime: 8,
     author: "Jentech Electrical",
+    reviewedBy: "andrew",
     sections: [
       {
         type: "p",
@@ -409,6 +413,7 @@ export const blogPosts: BlogPost[] = [
       "Interconnected photoelectric smoke alarm installed on a Brisbane ceiling",
     readTime: 9,
     author: "Jentech Electrical",
+    reviewedBy: "andrew",
     sections: [
       {
         type: "callout",
@@ -610,6 +615,7 @@ export const blogPosts: BlogPost[] = [
     coverAlt: "Modern RCD-protected switchboard installed in a Brisbane home",
     readTime: 8,
     author: "Jentech Electrical",
+    reviewedBy: "james",
     sections: [
       {
         type: "callout",
@@ -827,6 +833,7 @@ export const blogPosts: BlogPost[] = [
       "1930s Queenslander undergoing a full electrical rewire with original features preserved",
     readTime: 9,
     author: "Jentech Electrical",
+    reviewedBy: "khydyn",
     sections: [
       {
         type: "callout",
@@ -1023,6 +1030,7 @@ export const blogPosts: BlogPost[] = [
       "EV charger installed in a residential Brisbane garage by licensed electrician",
     readTime: 8,
     author: "Jentech Electrical",
+    reviewedBy: "rowan",
     sections: [
       {
         type: "callout",
@@ -1210,6 +1218,7 @@ export const blogPosts: BlogPost[] = [
       "Modern commercial switchboard with full RCD protection in a Queensland tenancy",
     readTime: 10,
     author: "Jentech Electrical",
+    reviewedBy: "brandon",
     sections: [
       {
         type: "callout",
