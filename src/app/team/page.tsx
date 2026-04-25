@@ -26,7 +26,7 @@ const director: TeamMember = {
   role: "Director",
   years: 18,
   licence: "129399",
-  image: "/team/andrew.jpg",
+  image: "/team/andrew.webp",
   // Andrew's own words — kept long because it's the founder/director's
   // statement and sets the tone for the whole team page.
   bio:
@@ -57,7 +57,7 @@ const electricians: TeamMember[] = [
       "School & corporate maintenance",
       "UPS servicing & installation",
     ],
-    image: "/team/brandon.jpg",
+    image: "/team/brandon.webp",
     bio:
       "Brandon coordinates Jentech's largest projects — including school buildings — and runs the ongoing maintenance program for school and corporate clients. Also leads UPS servicing and installations as a PSS authorised service agent.",
   },
@@ -71,7 +71,7 @@ const electricians: TeamMember[] = [
       "Residential renovations",
       "Switchboard upgrades",
     ],
-    image: "/team/james.jpg",
+    image: "/team/james.webp",
     bio:
       "James handles complex faults, residential renovations, and switchboard upgrades. The electrician you want when something doesn't make sense and the job needs a methodical, experienced eye.",
   },
@@ -85,7 +85,7 @@ const electricians: TeamMember[] = [
       "Residential projects",
       "Switchboard upgrades",
     ],
-    image: "/team/rowan.jpg",
+    image: "/team/rowan.webp",
     bio:
       "Rowan leads commercial fitouts, residential projects, and switchboard upgrades. Brings calm, detail-focused execution to multi-trade jobsites where coordination matters.",
   },
@@ -95,7 +95,7 @@ const office: TeamMember[] = [
   {
     name: "Karen",
     role: "Quoting & Accounts",
-    image: "/team/karen.jpg",
+    image: "/team/karen.webp",
     bio:
       "30 years across residential and commercial property management, plus a history coordinating small building projects. Karen prepares quotes, handles accounts, and keeps the back-of-house running so jobs move smoothly from enquiry to invoice.",
   },
@@ -108,7 +108,7 @@ const office: TeamMember[] = [
   {
     name: "Rachel",
     role: "Office Manager",
-    image: "/team/rachel.jpg",
+    image: "/team/rachel.webp",
     bio:
       "Six years of residential property management — including leading a property management department — and seven years embedded at Jentech, with a family background in real estate. Rachel keeps the team's day-to-day organised.",
   },
