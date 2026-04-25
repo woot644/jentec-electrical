@@ -116,6 +116,35 @@ export const serviceSchema = (name: string, description: string, url: string) =>
   serviceType: name,
 });
 
+export const personSchema = (opts: {
+  name: string;
+  jobTitle: string;
+  description: string;
+  image?: string;
+  url?: string;
+  knowsAbout?: string[];
+  licenceNumber?: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: opts.name,
+  jobTitle: opts.jobTitle,
+  description: opts.description,
+  ...(opts.image ? { image: opts.image } : {}),
+  ...(opts.url ? { url: opts.url } : {}),
+  worksFor: { "@id": `${SITE.url}/#business` },
+  ...(opts.knowsAbout?.length ? { knowsAbout: opts.knowsAbout } : {}),
+  ...(opts.licenceNumber
+    ? {
+        hasCredential: {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "QLD Electrical Worker Licence",
+          identifier: opts.licenceNumber,
+        },
+      }
+    : {}),
+});
+
 export const howToSchema = (opts: {
   name: string;
   description: string;
