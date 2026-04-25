@@ -1,4 +1,18 @@
 import { SITE } from "./site";
+// Slugs of every Jentech team member with a Person JSON-LD on /team.
+// Hard-coded here so the LocalBusiness schema can publish an `employee`
+// graph linking back to those Persons by @id, without a circular import
+// from the team page. Keep in sync with the data block in app/team/page.tsx.
+export const TEAM_SLUGS = [
+  "andrew",
+  "khydyn",
+  "brandon",
+  "james",
+  "rowan",
+  "karen",
+  "michael",
+  "rachel",
+] as const;
 
 // JSON-LD injection — Next.js standard pattern. Content is JSON.stringify of
 // controlled constants, never user input, so HTML escaping is safe.
@@ -67,6 +81,7 @@ export const localBusinessSchema = () => ({
     },
   ],
   sameAs: SITE.sameAs,
+  employee: TEAM_SLUGS.map((slug) => ({ "@id": personId(slug) })),
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Electrical Services",
@@ -116,7 +131,10 @@ export const serviceSchema = (name: string, description: string, url: string) =>
   serviceType: name,
 });
 
+export const personId = (slug: string) => `${SITE.url}/team#${slug}`;
+
 export const personSchema = (opts: {
+  slug: string;
   name: string;
   jobTitle: string;
   description: string;
@@ -127,6 +145,7 @@ export const personSchema = (opts: {
 }) => ({
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": personId(opts.slug),
   name: opts.name,
   jobTitle: opts.jobTitle,
   description: opts.description,

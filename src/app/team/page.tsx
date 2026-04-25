@@ -44,6 +44,7 @@ const electricians: TeamMember[] = [
       "High-end renovations",
       "Fine-detail work",
     ],
+    image: "/team/khydyn.webp",
     bio:
       "Khydyn manages the field team and specialises in architectural builds and renovations — anything that demands a fine eye for detail. 14 years on the tools across Brisbane's residential and commercial markets.",
   },
@@ -102,6 +103,7 @@ const office: TeamMember[] = [
   {
     name: "Michael",
     role: "Customer Relations",
+    image: "/team/michael.webp",
     bio:
       "Michael runs customer relations, drawing on a family history in property investment and a genuine love of the conversations that come with the role. Often the first voice you'll hear from Jentech.",
   },
@@ -113,6 +115,21 @@ const office: TeamMember[] = [
       "Six years of residential property management — including leading a property management department — and seven years embedded at Jentech, with a family background in real estate. Rachel keeps the team's day-to-day organised.",
   },
 ];
+
+// Internal-link map: each specialisation tag points to the matching
+// service page when one exists. Helps Google connect named experts to
+// service-intent queries (e.g. "Brandon -> UPS systems").
+const SPECIALISATION_LINKS: Record<string, string> = {
+  "Architectural builds":            "/services/residential",
+  "High-end renovations":            "/services/residential",
+  "Large project coordination":      "/services/commercial",
+  "School & corporate maintenance":  "/services/commercial",
+  "UPS servicing & installation":    "/services/ups-systems",
+  "Residential renovations":         "/services/residential",
+  "Switchboard upgrades":            "/services/switchboards",
+  "Commercial fitouts":              "/services/commercial",
+  "Residential projects":            "/services/residential",
+};
 
 const values = [
   {
@@ -179,14 +196,24 @@ function MemberCard({ m }: { m: TeamMember }) {
         </p>
         {m.specialisations?.length ? (
           <div className="flex flex-wrap gap-1.5 mt-auto">
-            {m.specialisations.map((s) => (
-              <span
-                key={s}
-                className="text-[11px] px-2 py-1 rounded border border-neon/30 text-neon/90"
-              >
-                {s}
-              </span>
-            ))}
+            {m.specialisations.map((s) => {
+              const href = SPECIALISATION_LINKS[s];
+              const className =
+                "text-[11px] px-2 py-1 rounded border border-neon/30 text-neon/90 transition-colors";
+              return href ? (
+                <Link
+                  key={s}
+                  href={href}
+                  className={`${className} hover:bg-neon/10`}
+                >
+                  {s}
+                </Link>
+              ) : (
+                <span key={s} className={className}>
+                  {s}
+                </span>
+              );
+            })}
           </div>
         ) : null}
       </div>
@@ -198,6 +225,7 @@ export default function TeamPage() {
   const teamUrl = `${SITE.url}/team`;
   const personSchemas = [director, ...electricians, ...office].map((m) =>
     personSchema({
+      slug: m.name.toLowerCase(),
       name: `${m.name}${m.role ? ` — ${m.role}, Jentech Electrical` : ""}`,
       jobTitle: m.role,
       // Person schema description is one field — collapse Andrew's
