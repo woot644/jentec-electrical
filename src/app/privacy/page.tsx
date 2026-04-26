@@ -83,7 +83,7 @@ const sections = [
   {
     heading: "9. Changes to this policy",
     body: [
-      "We may update this privacy policy from time to time. The current version is always available at jentec-electrical.vercel.app/privacy. Where changes are significant we'll note them at the top of this page.",
+      "We may update this privacy policy from time to time. The current version is always available at jentechelectrical.com.au/privacy. Where changes are significant we'll note them at the top of this page.",
     ],
   },
   {

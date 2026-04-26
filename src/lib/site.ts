@@ -1,7 +1,24 @@
+// Canonical site URL. On the production domain this should be
+// "https://jentechelectrical.com.au". Until DNS cutover lands we serve
+// from the Vercel preview URL, so the env var lets us flip between the
+// two without a code change.
+//
+// To cut over: set NEXT_PUBLIC_SITE_URL=https://jentechelectrical.com.au
+// in the Vercel project settings (Environment Variables -> Production)
+// and redeploy. Sitemap, schema, canonicals, robots.txt, OpenGraph and
+// llms.txt-rendered links all read from here.
+const PROD_URL = "https://jentechelectrical.com.au";
+const STAGING_URL = "https://jentec-electrical.vercel.app";
+const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? STAGING_URL
+).replace(/\/$/, "");
+
 export const SITE = {
   name: "Jentech Electrical",
   legalName: "Jentech Electrical",
-  url: "https://jentec-electrical.vercel.app",
+  url: SITE_URL,
+  /** Production canonical, regardless of which environment is rendering. */
+  productionUrl: PROD_URL,
   phone: "+61739149696",
   phoneDisplay: "07 3914 9696",
   email: "info@jentechelectrical.com.au",

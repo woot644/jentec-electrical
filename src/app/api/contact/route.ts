@@ -80,7 +80,7 @@ export async function POST(req: NextRequest) {
       </table>
       <h3 style="margin:24px 0 8px">Message</h3>
       <div style="white-space:pre-wrap;padding:16px;background:#f7f7f7;border-radius:8px">${escapeHtml(message)}</div>
-      <p style="color:#999;font-size:12px;margin-top:24px">Sent via jentec-electrical.vercel.app contact form.</p>
+      <p style="color:#999;font-size:12px;margin-top:24px">Sent via ${SITE.url.replace(/^https?:\/\//, "")} contact form.</p>
     </div>
   `;
 
