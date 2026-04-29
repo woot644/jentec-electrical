@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import BookingBotWidget from "@/components/BookingBotWidget";
 import { JsonLd, localBusinessSchema, websiteSchema } from "@/lib/schema";
 import { SITE } from "@/lib/site";
 import "./globals.css";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,6 +66,7 @@ export default function RootLayout({
         <Footer />
         <BookingBotWidget />
       </body>
+      {GA_ID ? <GoogleAnalytics gaId={GA_ID} /> : null}
     </html>
   );
 }
