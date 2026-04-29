@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
       // Top-level aliases
       { source: "/home", destination: "/", permanent: true },
       { source: "/index.html", destination: "/", permanent: true },
-      { source: "/specials", destination: "/", permanent: true },
+      // /specials is a real page on the new site (TCL AC promo) — no redirect.
       { source: "/call-now-07-3914-9696", destination: "/contact", permanent: true },
       { source: "/troubleshooting", destination: "/blog", permanent: true },
       // /blog stays at /blog — no redirect needed (path matches new site)
