@@ -58,7 +58,7 @@ function initialsOf(name: string) {
 function MemberCard({ m }: { m: TeamMember }) {
   return (
     <div className="card-hover bg-surface-card rounded-lg overflow-hidden flex flex-col">
-      <div className="aspect-[3/4] overflow-hidden border-b border-border bg-surface">
+      <div className="aspect-square overflow-hidden border-b border-border bg-surface">
         {m.image ? (
           <img
             src={m.image}
